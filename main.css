@@ -3,7 +3,16 @@
   padding: 0;
   margin: 0;
 }
+/*_________________________________HEADER_______________________________________*/
+header{
+  justify-content: center;
+  background-color: #273746;
+  padding-bottom: 5%;
+  color: white;
+  text-align: center;
+}
 
+/*_________________________________PHOTO_______________________________________*/
 .picture
 {
     height: 150px;
@@ -19,7 +28,7 @@
     max-width: 150px;
 }
 
-/*_________________________________Photo du centre________________________________________*/
+/*_________________________________PHOTO QUIZZ________________________________________*/
 .imageQuizz{
   max-width: 150px ;
   max-height: 150px;
@@ -29,10 +38,40 @@
   display: flex;
   justify-content: center;
 }
-/*_________________________________Bot________________________________________*/
+/*_________________________________GENERAL____________________________________*/
+
+.text {
+    background: #273746;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+img{
+  text-align: center;
+  background: #273746;
+}
+/*_________________________________QUIZZ_______________________________________*/
+.question1{
+  color: black;
+  background-color: #87CEFA;
+  justify-content: center;
+  padding: 3%;
+}
+
+.question1:hover{
+  color: #87CEFA;
+  background-color: grey;
+}
+
+.titre{
+  margin-bottom: : : 5%;
+}
+
+/*_________________________________BOT________________________________________*/
 
 
-/*____________________________________bouton___________________________________*/
+                /*________________bouton__________________________*/
 .bouton{
   text-align: center;
 }
@@ -69,12 +108,12 @@
                 inset 2px 2px 3px rgba(0, 0, 0, .6);
 }
 
-/*_________________________________Register________________________________________*/
+/*_________________________________REGISTER________________________________________*/
 .registerlink{
   color: black;
 
 }
-/*____________________-*/
+/*___________________________________JSP____________________________________________-*/
 
 .botText{
   padding-top: 0.7%;
@@ -101,4 +140,12 @@
 
 .onglet{
   color: black;
+}
+
+/*_________________________________FOOTER________________________________________*/
+footer{
+  justify-content: center;
+  background-color: #273746;
+  color: white;
+  text-align: center;
 }

@@ -13,6 +13,7 @@
     <a href="#" class="title">Homepage</a>
     <p> Bonjour, bienvenue sur notre site !
         Vous pouvez vous entrainez sur nos quizz sous format QCM afin de vous perfectionner comme nous nous perfectionnons nous aussi en html css et php.</p>
+
         <div id="imageQuizz">
 
         <img class="imageQuizz" src="quizz.png">

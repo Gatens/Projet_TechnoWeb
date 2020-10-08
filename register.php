@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+<link rel="stylesheet" type="text/css" href="register.css" />
   <head>
     <meta charset="utf-8">
     <title></title>
