@@ -1,5 +1,7 @@
 *{
   text-decoration: none;
+  padding: 0;
+  margin: 0;
 }
 
 .picture
@@ -17,10 +19,20 @@
     max-width: 150px;
 }
 
+/*_________________________________Photo du centre________________________________________*/
+.imageQuizz{
+  max-width: 150px ;
+  max-height: 150px;
+}
+
+#imageQuizz{
+  display: flex;
+  justify-content: center;
+}
 /*_________________________________Bot________________________________________*/
 
 
-/*__________________bouton____________*/
+/*____________________________________bouton___________________________________*/
 .bouton{
   text-align: center;
 }
@@ -75,7 +87,6 @@
 .footer{
   justify-content: center;
   background-color: grey;
-  padding-bottom: 2%;
 }
 
 .container{

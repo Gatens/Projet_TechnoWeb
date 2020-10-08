@@ -22,11 +22,10 @@
                 </p>
             </form>
 
-          <div class="registerbutton">
-              <a href="register.php" class="registerlink">Register/S'enregistrer</a><br>
+          <div class="register">
+              <a href="register.php" class="registerbutton">Register/S'enregistrer</a><br>
         </div>
   <?php include('footer.php')?>
-
 
   </body>
 

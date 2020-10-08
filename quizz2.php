@@ -73,10 +73,5 @@
     <?php include('footer.php') ?>
 
   </div>
-    <footer>
-        <div class="footer">
-          <a href="homepage.php" class="botText">goback to homepage</a>
-        </div>
-    </footer>
   </body>
 </html>

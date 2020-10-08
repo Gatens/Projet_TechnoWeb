@@ -7,20 +7,20 @@
   </head>
   <body>
     <div id='container'>
-    <?php include('header.php') ?>
-    <div id="content">
-      <p>Quizz de géographie :</p>
-      <form action="" method="post">
-  <fieldset class="question1">
-    <a class="titre"> 1) Quelle est la capitale du Canada ?</a>
-    <div class="Choix1">
-    <input type="radio" name="radio" id="radio"> <label for="radio">Vancouver</label>
-    <input type="radio" name="radio" id="radio"> <label for="radio">Montréal</label>
-    <input type="radio" name="radio" id="radio"> <label for="radio">Ottawa</label>
-    <input type="radio" name="radio" id="radio"> <label for="radio">Québec</label>
-   </div>
-  </fieldset>
-</form>
+      <?php include('header.php') ?>
+      <div id="content">
+        <p>Quizz de géographie :</p>
+        <form action="" method="post">
+          <fieldset class="question1">
+            <a class="titre"> 1) Quelle est la capitale du Canada ?</a>
+            <div class="Choix1">
+              <input type="radio" name="radio" id="radio"> <label for="radio">Vancouver</label>
+              <input type="radio" name="radio" id="radio"> <label for="radio">Montréal</label>
+              <input type="radio" name="radio" id="radio"> <label for="radio">Ottawa</label>
+              <input type="radio" name="radio" id="radio"> <label for="radio">Québec</label>
+            </div>
+          </fieldset>
+        </form>
   <form action="" method="post">
     <fieldset class="question1">
       <a class="titre"> 1) Quel pays ne fait pas partie de l'Amérique du Sud ?</a>
@@ -61,24 +61,19 @@
     <label for="rep6">Reponse F</label>
   </div>
   </fieldset>
+  <div>
 <form action="" method="get">
   <label for="GET-name">Question 3 ?</label>
   <input id="GET-name" type="number" name="name">
   <input type="submit" value="Enregistrer">
 </form>
-
-
 <a href="answer1.php" target="_blank"> <input type="button" value="Submit"> </a>
 
-    </div>
+  </div>
 
     <?php include('footer.php') ?>
 
   </div>
-    <footer>
-        <div class="footer">
-          <a href="homepage.php" class="botText">go back to homepage</a>
-        </div>
-    </footer>
+
   </body>
 </html>
