@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-<link rel="stylesheet" type="text/css" href="main.css" />
+<link rel="stylesheet" type="text/css" href="quizz.css" />
   <head>
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
     <div id='container'>
-    <?php include('homepage.php') ?>
+    <?php include('header.php') ?>
     <div id="content">
       <p>Quizz</p>
-      <form action="" method="post">
-  <fieldset>
-    <legend>Question 1 ?</legend>
-    <input type="radio" name="radio" id="radio"> <label for="radio">Reponse A</label> <br/>
-    <input type="radio" name="radio" id="radio"> <label for="radio">Reponse B</label><br/>
-    <input type="radio" name="radio" id="radio"> <label for="radio">Reponse C</label><br/>
-    <input type="radio" name="radio" id="radio"> <label for="radio">Reponse D</label><br/>
+  <form action="" method="post">
+  <fieldset class="question1">
+    <a class="titre">Question 1 ?</a>
+    <div class="Choix1">
+    <input type="radio" name="radio" id="radio"> <label for="radio">Reponse A</label>
+    <input type="radio" name="radio" id="radio"> <label for="radio">Reponse B</label>
+    <input type="radio" name="radio" id="radio"> <label for="radio">Reponse C</label>
+    <input type="radio" name="radio" id="radio"> <label for="radio">Reponse D</label>
+    </div>
   </fieldset>
 </form>
 <form action="" method="post">
   <fieldset>
-    <legend>Question 2 ?</legend>
+    <a>Question 2 ?</a>
     <input type="radio" name="radio" id="radio"> <label for="radio">Reponse A </label> <br/>
     <input type="radio" name="radio" id="radio"> <label for="radio">Reponse B</label><br/>
     <input type="radio" name="radio" id="radio"> <label for="radio">Reponse C</label><br/>
