@@ -14,10 +14,10 @@
   <fieldset class="question1">
     <a class="titre"> 1) Quelle est la capitale du Canada ?</a>
     <div class="Choix1">
-    <input type="radio" name="radio" id="radio"> <label for="radio">Vancouver</label> <br/>
-    <input type="radio" name="radio" id="radio"> <label for="radio">Montréal</label><br/>
-    <input type="radio" name="radio" id="radio"> <label for="radio">Ottawa</label><br/>
-    <input type="radio" name="radio" id="radio"> <label for="radio">Québec</label><br/>
+    <input type="radio" name="radio" id="radio"> <label for="radio">Vancouver</label>
+    <input type="radio" name="radio" id="radio"> <label for="radio">Montréal</label>
+    <input type="radio" name="radio" id="radio"> <label for="radio">Ottawa</label>
+    <input type="radio" name="radio" id="radio"> <label for="radio">Québec</label>
    </div>
   </fieldset>
 </form>
@@ -25,10 +25,10 @@
     <fieldset class="question1">
       <a class="titre"> 1) Quel pays ne fait pas partie de l'Amérique du Sud ?</a>
       <div class="Choix1">
-        <input type="radio" name="radio" id="radio"> <label for="radio">Bolivie</label> <br/>
-        <input type="radio" name="radio" id="radio"> <label for="radio">Nicaragua</label><br/>
-        <input type="radio" name="radio" id="radio"> <label for="radio">Urugay</label><br/>
-        <input type="radio" name="radio" id="radio"> <label for="radio">Venezuela</label><br/>
+        <input type="radio" name="radio" id="radio"> <label for="radio">Bolivie</label>
+        <input type="radio" name="radio" id="radio"> <label for="radio">Nicaragua</label>
+        <input type="radio" name="radio" id="radio"> <label for="radio">Urugay</label>
+        <input type="radio" name="radio" id="radio"> <label for="radio">Venezuela</label>
       </div>
     </fieldset>
   </form>

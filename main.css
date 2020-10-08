@@ -1,3 +1,7 @@
+*{
+  text-decoration: none;
+}
+
 .picture
 {
     height: 150px;
@@ -19,7 +23,6 @@
 /*__________________bouton____________*/
 .bouton{
   text-align: center;
-
 }
 
 .bouton1{
@@ -27,7 +30,6 @@
   background:#d34836;
   color: white;
   border-radius:10px;
-  
 }
 
 .bouton1:hover {
@@ -44,9 +46,6 @@
   background:#d34836;
   color: white;
   border-radius:10px;
-
-
-  
 }
 
 .bouton2:hover {
@@ -58,6 +57,11 @@
                 inset 2px 2px 3px rgba(0, 0, 0, .6);
 }
 
+/*_________________________________Register________________________________________*/
+.registerlink{
+  color: black;
+
+}
 /*____________________-*/
 
 .botText{

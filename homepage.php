@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-<link rel="stylesheet" type="text/css" href="main.css" /> 
+<link rel="stylesheet" type="text/css" href="main.css" />
 
   <head>
     <meta charset="utf-8">
@@ -20,23 +20,23 @@
           <a href="quizz1.php" class="bouton1">QUIZZ 1</a><br>
           <a href="quizz2.php" class="bouton2">QUIZZ 2</a><br>
         </div>
-          
-      
-          
-  
+
+
+
+
 
     <a href="account.php" class="onglet">Account</a><br>
 
-    
 
 
 
-  
 
-    
 
-         
-    
+
+
+
+
+
 
 
     <footer>

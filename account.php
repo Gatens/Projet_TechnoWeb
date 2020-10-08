@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
+<link rel="stylesheet" type="text/css" href="main.css" />
   <head>
     <meta charset="utf-8">
     <title>Account</title>
@@ -21,6 +22,8 @@
                 </p>
             </form>
 
+          <div class="registerbutton">
+              <a href="register.php" class="registerlink">Register/S'enregistrer</a><br>
         </div>
   <?php include('footer.php')?>
 
