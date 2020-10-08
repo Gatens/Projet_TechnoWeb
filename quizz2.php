@@ -12,7 +12,7 @@
       <p>Quizz</p>
   <form action="" method="post">
   <fieldset class="question1">
-    <a class="titre">Question 1 ?</a>
+    <a class="titre">De quelle couleur est le cheval d'Henri IV</a>
     <div class="Choix1">
     <input type="radio" name="radio" id="radio"> <label for="radio">Reponse A</label>
     <input type="radio" name="radio" id="radio"> <label for="radio">Reponse B</label>
@@ -22,13 +22,15 @@
   </fieldset>
 </form>
 <form action="" method="post">
-  <fieldset>
-    <a>Question 2 ?</a>
-    <input type="radio" name="radio" id="radio"> <label for="radio">Reponse A </label> <br/>
-    <input type="radio" name="radio" id="radio"> <label for="radio">Reponse B</label><br/>
-    <input type="radio" name="radio" id="radio"> <label for="radio">Reponse C</label><br/>
-    <input type="radio" name="radio" id="radio"> <label for="radio">Reponse D</label><br/>
-  </fieldset>
+<fieldset class="question1">
+  <a class="titre">Question 2 ?</a>
+  <div class="Choix1">
+  <input type="radio" name="radio" id="radio"> <label for="radio">Reponse A</label>
+  <input type="radio" name="radio" id="radio"> <label for="radio">Reponse B</label>
+  <input type="radio" name="radio" id="radio"> <label for="radio">Reponse C</label>
+  <input type="radio" name="radio" id="radio"> <label for="radio">Reponse D</label>
+  </div>
+</fieldset>
 </form>
 <form action="" method="get">
   <label for="GET-name">Question 3 ?</label>
