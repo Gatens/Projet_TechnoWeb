@@ -10,7 +10,7 @@
     <p> Bonjour, bienvenue sur notre site !
         Vous pouvez vous entrainez sur nos quizz sous format QCM afin de vous perfectionner comme nous nous perfectionnons nous aussi en html css et php.</p>
         <img src="quizz.png"/img><br>
-    <a href="compte.php" class="onglet">Account</a><br>
+    <a href="account.php" class="onglet">Account</a><br>
     <a href="quizz1.php"  class="onglet">Quizz1</a><br>
     <a href="quizz2.php"  class="onglet">Quizz2</a><br>
 
