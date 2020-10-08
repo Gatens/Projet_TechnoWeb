@@ -16,7 +16,7 @@
     <div class="Choix1">
     <input type="radio" name="radio" id="radio"> <label for="radio">Michel Platini</label>
     <input type="radio" name="radio" id="radio"> <label for="radio">Cristiano Ronaldo</label>
-    <input type="radio" name="radio" id="radio"> <label for="radio">Lionel Messi</label>
+    <input type="radio" checked="checked" name="radio" id="radio"> <label for="radio">Lionel Messi</label>
     <input type="radio" name="radio" id="radio"> <label for="radio">Johan Cruyff</label>
     </div>
   </fieldset>
@@ -26,7 +26,7 @@
   <a class="titre">Quelle est l'équipe à remporter le plus de coupe du monde de l'histoire ? </a>
   <div class="Choix1">
   <input type="radio" name="radio" id="radio"> <label for="radio">Allemagne</label>
-  <input type="radio" name="radio" id="radio"> <label for="radio">Brésil</label>
+  <input type="radio" checked="checked" name="radio" id="radio"> <label for="radio">Brésil</label>
   <input type="radio" name="radio" id="radio"> <label for="radio">Italie</label>
   <input type="radio" name="radio" id="radio"> <label for="radio">France</label>
   </div>
@@ -40,7 +40,7 @@
 <fieldset>
 <p>Quels joueurs ont marqué plus de 60 buts en une saison</p>
 <div>
-  <input type="checkbox" id="rep1" name="rep1">
+  <input type="checkbox" id="rep1" name="rep1" checked="checked">
   <label for="rep1">Gerd Muller</label>
 </div>
 
@@ -49,7 +49,7 @@
   <label for="rep2">Zinedine Zidane</label>
 </div>
 <div>
-  <input type="checkbox" id="rep3" name="rep3">
+  <input type="checkbox" id="rep3" name="rep3" checked="checked">
   <label for="rep3">Pelé</label>
 </div>
 <div>
@@ -66,7 +66,6 @@
 </div>
 </fieldset>
 
-<a href="answerquizz2.php" target="_blank"> <input type="button" value="Submit"> </a>
 
     </div>
 

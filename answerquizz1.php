@@ -16,7 +16,7 @@
             <div class="Choix1">
               <input type="radio" name="radio" id="radio"> <label for="radio">Vancouver</label>
               <input type="radio" name="radio" id="radio"> <label for="radio">Montréal</label>
-              <input type="radio" name="radio" id="radio"> <label for="radio">Ottawa</label>
+              <input type="radio" checked="checked" name="radio" id="radio"> <label for="radio">Ottawa</label>
               <input type="radio" name="radio" id="radio"> <label for="radio">Québec</label>
             </div>
           </fieldset>
@@ -26,7 +26,7 @@
       <a class="titre"> 1) Quel pays ne fait pas partie de l'Amérique du Sud ?</a>
       <div class="Choix1">
         <input type="radio" name="radio" id="radio"> <label for="radio">Bolivie</label>
-        <input type="radio" name="radio" id="radio"> <label for="radio">Nicaragua</label>
+        <input type="radio" checked="checked" name="radio" id="radio"> <label for="radio">Nicaragua</label>
         <input type="radio" name="radio" id="radio"> <label for="radio">Urugay</label>
         <input type="radio" name="radio" id="radio"> <label for="radio">Venezuela</label>
       </div>
@@ -41,11 +41,11 @@
   </div>
 
   <div>
-    <input type="checkbox" id="rep2" name="rep2">
+    <input type="checkbox" id="rep2" name="rep2" checked="checked">
     <label for="rep2">Estonie</label>
   </div>
   <div>
-    <input type="checkbox" id="rep3" name="rep3">
+    <input type="checkbox" id="rep3" name="rep3" checked="checked">
     <label for="rep3">Lettonie</label>
   </div>
   <div>
@@ -57,17 +57,16 @@
     <label for="rep5">Norvège</label>
   </div>
   <div>
-    <input type="checkbox" id="rep6" name="rep6">
+    <input type="checkbox" id="rep6" name="rep6" checked="checked">
     <label for="rep6">Slovénie</label>
   </div>
   </fieldset>
   <div>
 <form action="" method="get">
-  <label for="GET-name">Question 3 ?</label>
+  <label for="GET-name">Combien y a-t'il d'étoiles sur le drapeau américain ?</label>
   <input id="GET-name" type="number" name="name">
   <input type="submit" value="Enregistrer">
 </form>
-<a href="answerquizz1.php" target="_blank"> <input type="button" value="Submit"> </a>
 
   </div>
 
