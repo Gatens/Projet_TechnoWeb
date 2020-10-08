@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-<link rel="stylesheet" type="text/css" href="main.css" />
   <head>
     <meta charset="utf-8">
     <title>Account</title>
   </head>
 
   <body>
-
+ <?php include('header.php')?>
   	<div id="account">
 
             <h1>
@@ -23,25 +22,10 @@
             </form>
 
         </div>
-
-
-
-        <footer>
-            <div class="footer">
-              <a href="homepage.php" class="botText">goback to homepage</a>
-            </div>
-        </footer>
+  <?php include('footer.php')?>
 
 
   </body>
 
 
 </html>
-
-
-<?php
-$bonjour='bonjour ';
-$name=$_POST['name'];
-$surname=$_POST['surname'];
-echo $bonjour.$surname
- ?>
