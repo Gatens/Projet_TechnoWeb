@@ -62,12 +62,6 @@
 </div>
 </fieldset>
 
-
-
-
-
-
-
 <a href="answerquizz2.php" target="_blank"> <input type="button" value="Submit"> </a>
 
     </div>
