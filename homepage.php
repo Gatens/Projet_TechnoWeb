@@ -5,7 +5,7 @@
     <title>HomePage</title>
   </head>
   <body>
-    <div class="/.container text">
+    <div class="container text">
     <a href="#" class="title">Homepage</a>
     <p> Bonjour, bienvenue sur notre site !
         Vous pouvez vous entrainez sur nos quizz sous format QCM afin de vous perfectionner comme nous nous perfectionnons nous aussi en html css et php.</p>
@@ -16,7 +16,7 @@
 
 
     <footer>
-        <div class="/.footer">
+        <div class="footer">
           <a href="homepage.php" class="botText">goback to homepage</a>
         </div>
     </footer>

@@ -26,7 +26,7 @@
 
 
         <footer>
-            <div class="/.footer">
+            <div class="footer">
               <a href="homepage.html" class="botText">goback to homepage</a>
             </div>
         </footer>
