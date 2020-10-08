@@ -16,6 +16,50 @@
 /*_________________________________Bot________________________________________*/
 
 
+/*__________________bouton____________*/
+.bouton{
+  text-align: center;
+
+}
+
+.bouton1{
+  font:Bold 100px Arial;
+  background:#d34836;
+  color: white;
+  border-radius:10px;
+  
+}
+
+.bouton1:hover {
+    background-color: grey;
+}
+
+.bouton1:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+.bouton2{
+  font:Bold 100px Arial;
+  background:#d34836;
+  color: white;
+  border-radius:10px;
+
+
+  
+}
+
+.bouton2:hover {
+    background-color: grey;
+}
+
+.bouton2:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+/*____________________-*/
+
 .botText{
   padding-top: 0.7%;
   display: grid;
@@ -30,7 +74,7 @@
   padding-bottom: 2%;
 }
 
-.container.text{
+.container{
   background: #303030;
 }
 .subtitle{
