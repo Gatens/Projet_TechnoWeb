@@ -26,12 +26,12 @@
 
 .footer{
   justify-content: center;
-  background-color: #ff001b;
+  background-color: red;
   padding-bottom: 2%;
 }
 
 .container.text{
-  background: #6397E6;
+  background: grey;
 }
 .subtitle{
   word-spacing: normal;
