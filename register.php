@@ -8,28 +8,29 @@
   <body>
 
     <form action="action_page.php">
-      <div class="container5">
+      <div class="intro">
         <h1>Register/S'enregistrer</h1>
         <p>Inscrivez vous.</p>
-        <hr>
+
+     </div>
+
+     <div class="formulaire">
 
         <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Entrer Email" name="email" id="email" required>
+        <input type="text" placeholder="Entrer Email" name="email" id="email" class="blank" required >
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Entrer mot de passe" name="pswd" id="pswd" required>
+        <label for="psw"><b>Mot de passe</b></label>
+        <input type="Mot de passe" placeholder="Entrer mot de passe" name="pswd" id="pswd" class="blank" required>
 
-        <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input type="password" placeholder="Répèter mot de passe" name="pswd-repeat" id="pswd-repeat" required>
-        <hr>
+        <label for="psw-repeat"><b>Répèter mot de passe</b></label>
+        <input type="password" placeholder="Répèter mot de passe" name="pswd-repeat" id="pswd-repeat" class="blank" required>
 
-        <button type="submit" class="registerbutton2">Register/S'enregistrer</button>
+        <button type="submit" class="registerbutton2 blank ">Register/S'enregistrer</button>
+    </div>
+
+      <div class="signin">
+        <p>Déjà un compte ? <a href="account.php" class="lien">Se connecter</a>.</p>
       </div>
-
-      <div class="container signin">
-        <p>Déjà un compte ? <a href="account.php">Se connecter</a>.</p>
-      </div>
-
     </form>
   </body>
 </html>

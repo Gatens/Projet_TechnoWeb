@@ -9,7 +9,7 @@
     <div id='container'>
       <?php include('header.php') ?>
       <div id="content">
-        <p>Quizz de géographie :</p>
+        <p>Réponses du quizz</p>
         <form action="" method="post">
           <fieldset class="question1">
             <a class="titre"> 1) Quelle est la capitale du Canada ?</a>

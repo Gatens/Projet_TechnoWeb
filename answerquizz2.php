@@ -9,7 +9,7 @@
     <div id='container'>
     <?php include('header.php') ?>
     <div id="content">
-      <p>Quizz</p>
+      <p>Réponses du quizz</p>
   <form action="" method="post">
   <fieldset class="question1">
     <a class="titre">Quel footballeur à le plus de Ballon d'Or de l'histoire ?</a>

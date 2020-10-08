@@ -63,7 +63,7 @@
   </fieldset>
   <div>
 <form action="" method="get">
-  <label for="GET-name">Question 3 ?</label>
+  <label for="GET-name">Combien y a-t'il d'étoiles sur le drapeau américain ?</label>
   <input id="GET-name" type="number" name="name">
   <input type="submit" value="Enregistrer">
 </form>
