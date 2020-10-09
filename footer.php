@@ -7,10 +7,8 @@
   </head>
   <body>
     <footer>
-    <div class="footer">
-        <a href="homepage.php" class="text">Go back to Homepage</a><br>
-        <p align="center" justify="center">Merci de votre visite!</p>
-    </div>
+        <a href="homepage.php" class="textfooter">Go back to Homepage</a>
+        <p class ="textfooter"> Merci de votre visite!</p>
   </footer>
   </body>
 </html>

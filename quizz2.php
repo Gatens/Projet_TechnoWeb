@@ -32,12 +32,14 @@
   </div>
 </fieldset>
 </form>
+<div class="question1">
 <form action="" method="get">
   <label for="GET-name">Qui est le dernier joueur à avoir remporté le Ballon d'Or ? </label>
   <input id="GET-name" type="number" name="name">
   <input type="submit" value="Enregistrer">
 </form>
-<fieldset>
+</div>
+<fieldset class="question1">
 <p>Quels joueurs ont marqué plus de 60 buts en une saison ? </p>
 <div>
   <input type="checkbox" id="rep1" name="rep1">

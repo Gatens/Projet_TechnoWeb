@@ -7,11 +7,16 @@
   </head>
   <body>
     <header>
-    <p > Bonjour, bienvenue sur notre site !<br>
-        Vous pouvez vous entrainez sur nos quizz sous format QCM</p>
-    <a href="account.php" class="text" >Account</a>
-    <a href="quizz1.php"  class="text">Quizz1</a>
-    <a href="quizz2.php"  class="text">Quizz2</a>
+      <div id="textheader">
+        <p class="textheader"> Bonjour, bienvenue sur notre site !</p>
+        <p class="textheader">Vous pouvez vous entrainez sur nos quizz sous format QCM</p>
+        <a href="account.php" class="textheader" >Account</a>
+      </div>
+    
+    <div class="bouton">
+      <a href="quizz1.php" class="bouton1">QUIZZ 1</a>
+      <a href="quizz2.php" class="bouton2">QUIZZ 2</a>
+    </div>
   </header>
   </body>
 </html>

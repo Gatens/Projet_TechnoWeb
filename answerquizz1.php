@@ -12,7 +12,7 @@
         <p>Réponses du quizz</p>
         <form action="" method="post">
           <fieldset class="question1">
-            <a class="titre"> 1) Quelle est la capitale du Canada ?</a>
+            <a class="titre"> Quelle est la capitale du Canada ?</a>
             <div class="Choix1">
               <input type="radio" name="radio" id="radio"> <label for="radio">Vancouver</label>
               <input type="radio" name="radio" id="radio"> <label for="radio">Montréal</label>
@@ -23,7 +23,7 @@
         </form>
   <form action="" method="post">
     <fieldset class="question1">
-      <a class="titre"> 1) Quel pays ne fait pas partie de l'Amérique du Sud ?</a>
+      <a class="titre"> Quel pays ne fait pas partie de l'Amérique du Sud ?</a>
       <div class="Choix1">
         <input type="radio" name="radio" id="radio"> <label for="radio">Bolivie</label>
         <input type="radio" checked="checked" name="radio" id="radio"> <label for="radio">Nicaragua</label>
@@ -32,7 +32,7 @@
       </div>
     </fieldset>
   </form>
-<fieldset>
+<fieldset class="question1">
 
   <p>Quels pays sont dans l'Union Européenne ?</p>
   <div>
@@ -61,7 +61,7 @@
     <label for="rep6">Slovénie</label>
   </div>
   </fieldset>
-  <div>
+  <div class="question1">
 <form action="" method="get">
   <label for="GET-name">Combien y a-t'il d'étoiles sur le drapeau américain ?</label>
   <input id="GET-name" type="number" name="name">

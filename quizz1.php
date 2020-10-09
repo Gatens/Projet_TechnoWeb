@@ -32,7 +32,7 @@
       </div>
     </fieldset>
   </form>
-<fieldset>
+<fieldset class="question1">
 
   <p>Quels pays sont dans l'Union Européenne ?</p>
   <div>
@@ -61,7 +61,7 @@
     <label for="rep6">Slovénie</label>
   </div>
   </fieldset>
-  <div>
+  <div class=question1>
 <form action="" method="get">
   <label for="GET-name">Combien y a-t'il d'étoiles sur le drapeau américain ?</label>
   <input id="GET-name" type="number" name="name">

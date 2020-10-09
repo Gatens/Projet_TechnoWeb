@@ -3,40 +3,39 @@
   padding: 0;
   margin: 0;
 }
+
 /*_________________________________HEADER_______________________________________*/
 header{
   justify-content: center;
   background-color: #273746;
-  padding-bottom: 5%;
   color: white;
   text-align: center;
-}
 
-/*_________________________________PHOTO_______________________________________*/
-.picture
-{
-    height: 150px;
-    width: 150px;
-    background-color: white;
-    margin-top: 10px;
-    display: inline-block;
 }
+#textheader{
+  display:flex;
+  flex-direction:column;
 
-.picture img
-{
-    max-height: 150px;
-    max-width: 150px;
+
+}
+.textheader{
+  padding-bottom: 0.5%;
+  color: white;
+  text-decoration: none;
+
 }
 
 /*_________________________________PHOTO QUIZZ________________________________________*/
 .imageQuizz{
-  max-width: 150px ;
-  max-height: 150px;
 }
 
 #imageQuizz{
+  text-align: center;
   display: flex;
   justify-content: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+
 }
 /*_________________________________GENERAL____________________________________*/
 
@@ -65,8 +64,13 @@ img{
 }
 
 .titre{
-  margin-bottom: : : 5%;
+  margin-bottom:5%;
 }
+
+#content{
+  font-family: Impact, "Arial Black", Arial, Verdana, sans-serif;
+}
+
 
 /*_________________________________BOT________________________________________*/
 
@@ -123,10 +127,7 @@ img{
   font-size: 150%;
 }
 
-.footer{
-  justify-content: center;
-  background-color: grey;
-}
+
 
 .container{
   background: #303030;
@@ -144,8 +145,22 @@ img{
 
 /*_________________________________FOOTER________________________________________*/
 footer{
+  position:absolute;
+  position:fixed;
+  bottom: 0;
+  width: 100%;
   justify-content: center;
   background-color: #273746;
   color: white;
   text-align: center;
+  display: flex;
+  height:5%;
+  background-color: grey;
+  flex-direction: column;
+
+}
+
+.textfooter{
+  text-decoration: none;
+  color: white;
 }

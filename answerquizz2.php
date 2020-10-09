@@ -12,7 +12,7 @@
       <p>Réponses du quizz</p>
   <form action="" method="post">
   <fieldset class="question1">
-    <a class="titre">Quel footballeur à le plus de Ballon d'Or de l'histoire ?</a>
+    <a class="titre">Quel footballeur a le plus de Ballon d'Or de l'histoire ?</a>
     <div class="Choix1">
     <input type="radio" name="radio" id="radio"> <label for="radio">Michel Platini</label>
     <input type="radio" name="radio" id="radio"> <label for="radio">Cristiano Ronaldo</label>
@@ -23,7 +23,7 @@
 </form>
 <form action="" method="post">
 <fieldset class="question1">
-  <a class="titre">Quelle est l'équipe à remporter le plus de coupe du monde de l'histoire ? </a>
+  <a class="titre">Quelle équipe a le plus remporté de coupes du monde ? </a>
   <div class="Choix1">
   <input type="radio" name="radio" id="radio"> <label for="radio">Allemagne</label>
   <input type="radio" checked="checked" name="radio" id="radio"> <label for="radio">Brésil</label>
@@ -32,12 +32,14 @@
   </div>
 </fieldset>
 </form>
+<div class="question1">
 <form action="" method="get">
   <label for="GET-name">Qui est le dernier jour à avoir remporté le Ballon d'Or ? </label>
   <input id="GET-name" type="number" name="name">
   <input type="submit" value="Enregistrer">
 </form>
-<fieldset>
+</div>
+<fieldset class="question1">
 <p>Quels joueurs ont marqué plus de 60 buts en une saison</p>
 <div>
   <input type="checkbox" id="rep1" name="rep1" checked="checked">
