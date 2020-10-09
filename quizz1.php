@@ -23,7 +23,7 @@
         </form>
   <form action="" method="post">
     <fieldset class="question1">
-      <a class="titre"> 2) Quel pays ne fait pas partie de l'Amérique du Sud ?</a>
+      <a class="titre">Quel pays ne fait pas partie de l'Amérique du Sud ?</a>
       <div class="Choix1">
         <input type="radio" name="radio" id="radio"> <label for="radio">Bolivie</label>
         <input type="radio" name="radio" id="radio"> <label for="radio">Nicaragua</label>
