@@ -32,5 +32,6 @@
         <p>Déjà un compte ? <a href="account.php" class="lien">Se connecter</a>.</p>
       </div>
     </form>
+    <?php include('footer.php')?>
   </body>
 </html>
