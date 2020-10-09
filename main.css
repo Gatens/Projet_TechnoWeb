@@ -53,13 +53,13 @@ img{
 /*_________________________________QUIZZ_______________________________________*/
 .question1{
   color: black;
-  background-color: #87CEFA;
+  background-color: #CACFD2  ;
   justify-content: center;
   padding: 3%;
 }
 
 .question1:hover{
-  color: #87CEFA;
+  color: #CACFD2;
   background-color: grey;
 }
 
