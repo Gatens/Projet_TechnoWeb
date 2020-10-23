@@ -16,6 +16,24 @@
 
      <div class="formulaire">
 
+        <label for="id"><b>Identifiant</b></label>
+        <input type="text" placeholder="Entrer identifiant" name="id" id="id" class="blank" required>
+
+        <label for="lastname"><b>Nom</b></label>
+        <input type="text" placeholder="Entrer nom" name="lastname" id="lastname" class="blank" required>
+
+        <label for="firstname"><b>Prénom</b></label>
+        <input type="text" placeholder="Entrer prénom" name="firstname" id="firstname" class="blank" required>
+
+        <label for="adress"><b>Adresse</b></label>
+        <input type="text" placeholder="Entrer adresse" name="adress" id="adress" class="blank" required>
+
+        <label for="phone"><b>Téléphone</b></label>
+        <input type="text" placeholder="Entrer téléphone" name="phone" id="phone" class="blank" required>
+
+        <label for="birthdate"><b>Date de naissance</b></label>
+        <input type="text" placeholder="Entrer date de naissance" name="birthdate" id="birthdate" class="blank" required>
+
         <label for="email"><b>Email</b></label>
         <input type="text" placeholder="Entrer Email" name="email" id="email" class="blank" required >
 
