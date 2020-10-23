@@ -16,8 +16,10 @@
 
             <form method="post">
                 <p>
-                    <label for="nom">Name</label> : <input type="text" name="name" placeholder="Ex: La B" id="name" required />
-                    <label for="surname">Surname</label> : <input type="text" name="surname" placeholder="Ex: Thomas" id="surname" required />
+                    <label for="id">Identifiant</label> : <input type="text" name="id" placeholder="Entrer identifiant" id="id" required />
+
+                    <label for="psw">Surname</label> : <input type="text" name="psw" placeholder="*******" id="psw" required />
+                    
                     <input type="submit" name="OK">
                 </p>
             </form>
