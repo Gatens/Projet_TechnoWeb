@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 23 oct. 2020 à 15:26
+-- Généré le : ven. 23 oct. 2020 à 16:19
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -31,24 +31,51 @@ DROP TABLE IF EXISTS `answer`;
 CREATE TABLE IF NOT EXISTS `answer` (
   `answer_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'answer identifier',
   `answer_text` varchar(255) NOT NULL COMMENT 'text of the answer',
-  `is_valid_answer` varchar(255) NOT NULL COMMENT 'valid answer for question',
+  `is_valid_answer` tinyint(1) NOT NULL COMMENT 'valid answer for question',
   `answer_question_id` int(11) NOT NULL COMMENT 'question related',
   PRIMARY KEY (`answer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `answer`
 --
 
 INSERT INTO `answer` (`answer_id`, `answer_text`, `is_valid_answer`, `answer_question_id`) VALUES
-(1, '\'Vancouver\'  \'Montréal\'  \'Ottawa\'  \'Québec\'', 'Ottawa', 1),
-(2, '\'Bolivie\'  \'Nicaragua\'  \'Uruguay\'  \'Venezuela\'', 'Nicaragua', 2),
-(3, '\'Serbie\' \'Estonie\' \'Lettonie\' \'Turquie\' \'Norvège\' \'Slovénie\'', '\'Estonie\' \'Lettonie\' \'Slovénie\'', 3),
-(4, '\'49\' \'50\' \'51\' \'52\'', '50', 4),
-(5, '\'Michel Platini\'  \'Cristiano Ronaldo\'  Lionel Messi\'  \'Johan Cruyff\'', 'Lionel Messi', 5),
-(6, '\'Allemagne\'  \'Brésil\'  \'Italie\'  \'France\'', 'Brésil ', 6),
-(7, '\'Cristiano Ronaldo\' \'Lionel Messi\' \'Virgil Van Dijk\' \'Luka Modric\'', 'Luka Modric', 7),
-(8, '\'Gerd Muller\' \'Zinédine Zidane\' \'Pelé\' \'Diego Maradona\' \'Lewandowski\' \'Harry Kane\'', '\'Gerd Muller\' \'Pelé\'', 8);
+(1, 'Vancouver', 0, 1),
+(2, 'Montreal', 0, 1),
+(3, 'Ottawa', 1, 1),
+(4, 'Quebec', 0, 1),
+(5, 'Bolivie', 0, 2),
+(6, 'Nicaragua', 1, 2),
+(7, 'Uruguay', 0, 2),
+(8, 'Venezuela', 0, 2),
+(9, 'Serbie', 0, 3),
+(10, 'Estonie', 1, 3),
+(11, 'Lettonie', 1, 3),
+(12, 'Turquie', 0, 3),
+(13, 'Norvège', 0, 3),
+(14, 'Slovénie', 1, 3),
+(15, '49', 0, 4),
+(16, '50', 1, 4),
+(17, '51', 0, 4),
+(18, '52', 0, 4),
+(19, 'Michel Platini', 0, 5),
+(20, 'Cristiano Ronaldo', 0, 5),
+(21, 'Lionel Messi', 1, 5),
+(22, 'Allemagne', 0, 6),
+(23, 'Bresil', 1, 6),
+(24, 'Italie', 0, 6),
+(25, 'France', 0, 6),
+(26, 'Cristiano Ronaldo', 0, 7),
+(27, 'Lionel Messi', 0, 7),
+(28, 'Virgil Van Dijk', 0, 7),
+(29, 'Luka Modric', 1, 7),
+(30, 'Gerd Muller', 1, 8),
+(31, 'Zinedine Zidane', 0, 8),
+(32, 'Pele', 1, 8),
+(33, 'Diego Maradona', 0, 8),
+(34, 'Robert Lewandowski', 0, 8),
+(35, 'Harry Kane', 0, 8);
 
 -- --------------------------------------------------------
 
