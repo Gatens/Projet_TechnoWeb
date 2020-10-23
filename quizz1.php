@@ -6,13 +6,19 @@
     <title></title>
   </head>
   <body>
+
     <div id='container'>
       <?php include('header.php') ?>
+
       <div id="content">
+
         <p>Quizz de géographie :</p>
+        
         <form action="" method="post">
           <fieldset class="question1">
-            <a class="titre"> Quelle est la capitale du Canada ?</a>
+
+          
+            <a class="titre"> 1111 </a>
             <div class="Choix1">
               <input type="radio" name="radio" id="radio"> <label for="radio">Vancouver</label>
               <input type="radio" name="radio" id="radio"> <label for="radio">Montréal</label>
@@ -21,9 +27,10 @@
             </div>
           </fieldset>
         </form>
+
   <form action="" method="post">
     <fieldset class="question1">
-      <a class="titre">Quel pays ne fait pas partie de l'Amérique du Sud ?</a>
+      <a class="titre"> 2) Quel pays ne fait pas partie de l'Amérique du Sud ?</a>
       <div class="Choix1">
         <input type="radio" name="radio" id="radio"> <label for="radio">Bolivie</label>
         <input type="radio" name="radio" id="radio"> <label for="radio">Nicaragua</label>
@@ -32,6 +39,7 @@
       </div>
     </fieldset>
   </form>
+
 <fieldset class="question1">
 
   <p>Quels pays sont dans l'Union Européenne ?</p>
@@ -61,12 +69,15 @@
     <label for="rep6">Slovénie</label>
   </div>
   </fieldset>
+
   <div class=question1>
 <form action="" method="get">
   <label for="GET-name">Combien y a-t'il d'étoiles sur le drapeau américain ?</label>
   <input id="GET-name" type="number" name="name">
+
   <input type="submit" value="Enregistrer">
 </form>
+
 <a href="answerquizz1.php" target="_blank"> <input type="button" value="Submit"> </a>
 
   </div>

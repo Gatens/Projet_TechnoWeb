@@ -18,7 +18,7 @@
 
       <?php include('footer.php') ?>
 
-      <?php
+        <?php
             $servername = 'localhost';
             $username = 'root';
             $password = 'root';
@@ -31,7 +31,11 @@
                 die('Erreur : ' .$conn->connect_error);
             }
             echo 'Connexion réussie';
+          
+
         ?>
+
+       
         
   </body>
 
