@@ -66,9 +66,10 @@
   <input type="checkbox" id="rep6" name="rep6">
   <label for="rep6">Harry Kane</label>
 </div>
+  <a href="answerquizz2.php" target="_blank"> <input type="button" value="Submit"> </a>
 </fieldset>
 
-<a href="answerquizz2.php" target="_blank"> <input type="button" value="Submit"> </a>
+
 
     </div>
 
