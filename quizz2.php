@@ -8,11 +8,20 @@
   <body>
     <div id='container'>
     <?php include('header.php') ?>
+    <?php include('connect.php') ?>
     <div id="content">
       <p>Quizz de football : </p>
   <form action="" method="post">
   <fieldset class="question1">
-    <a class="titre">Quel footballeur a le plus de Ballon d'Or de l'histoire ?</a>
+    <?php $reponse = $bdd->query('SELECT question_title FROM question where question_id=5');
+
+    while ($donnees = $reponse->fetch())
+    {
+        echo $donnees['question_title'] . '<br />';
+    }
+
+    $reponse->closeCursor();
+?>
     <div class="Choix1">
     <input type="radio" name="radio" id="radio"> <label for="radio">Michel Platini</label>
     <input type="radio" name="radio" id="radio"> <label for="radio">Cristiano Ronaldo</label>
@@ -23,7 +32,15 @@
 </form>
 <form action="" method="post">
 <fieldset class="question1">
-  <a class="titre">Quelle équipe a le plus remporté de coupes du monde ? </a>
+  <?php $reponse = $bdd->query('SELECT question_title FROM question where question_id=6');
+
+  while ($donnees = $reponse->fetch())
+  {
+      echo $donnees['question_title'] . '<br />';
+  }
+
+  $reponse->closeCursor();
+?>
   <div class="Choix1">
   <input type="radio" name="radio" id="radio"> <label for="radio">Allemagne</label>
   <input type="radio" name="radio" id="radio"> <label for="radio">Brésil</label>
@@ -34,13 +51,29 @@
 </form>
 <div class="question1">
 <form action="" method="get">
-  <label for="GET-name">Qui est le dernier joueur à avoir remporté le Ballon d'Or ? </label>
+  <?php $reponse = $bdd->query('SELECT question_title FROM question where question_id=7');
+
+  while ($donnees = $reponse->fetch())
+  {
+      echo $donnees['question_title'] . '<br />';
+  }
+
+  $reponse->closeCursor();
+?>
   <input id="GET-name" type="number" name="name">
   <input type="submit" value="Enregistrer">
 </form>
 </div>
 <fieldset class="question1">
-<p>Quels joueurs ont marqué plus de 60 buts en une saison ? </p>
+  <?php $reponse = $bdd->query('SELECT question_title FROM question where question_id=8');
+
+  while ($donnees = $reponse->fetch())
+  {
+      echo $donnees['question_title'] . '<br />';
+  }
+
+  $reponse->closeCursor();
+?>
 <div>
   <input type="checkbox" id="rep1" name="rep1">
   <label for="rep1">Gerd Muller</label>
