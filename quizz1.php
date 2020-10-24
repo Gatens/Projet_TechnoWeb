@@ -219,9 +219,42 @@
 
   $reponse->closeCursor();
 ?>
-  <input id="GET-name" type="number" name="name">
+<input type="radio" name="radio" id="radio"> <label for="radio"> <?php $reponse = $bdd->query('SELECT answer_text FROM answer where answer_id=15');
 
-  <input type="submit" value="Enregistrer">
+ while ($donnees = $reponse->fetch())
+ {
+     echo $donnees['answer_text'] . '<br />';
+ }
+
+ $reponse->closeCursor();
+?></label>
+<input type="radio" name="radio" id="radio"> <label for="radio"> <?php $reponse = $bdd->query('SELECT answer_text FROM answer where answer_id=16');
+
+ while ($donnees = $reponse->fetch())
+ {
+     echo $donnees['answer_text'] . '<br />';
+ }
+
+ $reponse->closeCursor();
+?></label>
+<input type="radio" name="radio" id="radio"> <label for="radio"> <?php $reponse = $bdd->query('SELECT answer_text FROM answer where answer_id=17');
+
+ while ($donnees = $reponse->fetch())
+ {
+     echo $donnees['answer_text'] . '<br />';
+ }
+
+ $reponse->closeCursor();
+?></label>
+<input type="radio" name="radio" id="radio"> <label for="radio"> <?php $reponse = $bdd->query('SELECT answer_text FROM answer where answer_id=18');
+
+ while ($donnees = $reponse->fetch())
+ {
+     echo $donnees['answer_text'] . '<br />';
+ }
+
+ $reponse->closeCursor();
+?></label>
 </form>
 
 <a href="answerquizz1.php" target="_blank"> <input type="button" value="Submit"> </a>
