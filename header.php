@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-<link rel="stylesheet" type="text/css" href="main.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -14,8 +14,8 @@
       </div>
 
     <div class="bouton">
-      <a href="quizz.php?id=1" class="bouton1">QUIZZ 1</a>
-      <a href="quizz.php?id=2" class="bouton2">QUIZZ 2</a>
+      <a href="quizzmain.php?id=1" class="bouton1">QUIZZ 1</a>
+      <a href="quizzmain.php?id=2" class="bouton2">QUIZZ 2</a>
     </div>
   </header>
   </body>

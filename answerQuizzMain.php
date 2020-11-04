@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="css/main.css">
 
   <head>
     <meta charset="utf-8">
@@ -10,9 +10,9 @@
   <div class='container'>
     <?php include('header.php'); ?>
          <?php
-          include('connect.php');
-          include('afficherrep.php');
-          afficherrep($_GET['id'],$bdd);
+          include('connectToDB.php');
+          include('displayAnswer.php');
+          displayAnswer($_GET['id'],$bdd);
           ?>
     <?php include('footer.php'); ?>
   </div>

@@ -1,27 +1,26 @@
 <?php
 	include('connectToDB.php');
-	function afficherQuizz($quizzId,$bdd){
-		/*titre et contenu*/
+	function displayQuizz($ID_quizz,$bdd){  /*affiche le quizz en fonction de l'ID*/
 
-    function printTitle ($quizzId,$comp,$line,$exactQuestion,$bdd){
+    function quizzTitle ($ID_quizz,$comp,$line,$exactQuestion,$bdd){
 
-      echo("<div id='question ".$comp."_quizz".$quizzId."' class='questionQuizz ".$exactQuestion."'>");
+      echo("<div id='question ".$comp."_quizz".$ID_quizz."' class='questionQuizz ".$exactQuestion."'>");
       echo("<p class='titreQuestion'>Question".$comp." : ".$line['question_title']."</p>");
     }
 
 
     $quizz = $bdd->query('SELECT quizz_name FROM quizz;')->fetchAll();
 
-    echo('<div id="content"><div id="titrePage"><h2>Quizz '.$quizz[$quizzId-1]['quizz_name'].'</h2></div>'); //Print quizz title from db
-    echo('<form action="reponsequizz.php?id='.$quizzId.'" method="post"><div id="questionContent">');
+    echo('<div id="content"><div id="titrePage"><h2>Quizz '.$quizz[$ID_quizz-1]['quizz_name'].'</h2></div>'); //Print quizz title from db
+    echo('<form action="answerQuizzMain.php?id='.$ID_quizz.'" method="post"><div id="questionContent">');
     /*question quizz start*/
-    $question = $bdd->query('SELECT question_id, question_title,question_input_type,question_quizz_id FROM question WHERE question.question_quizz_id = '.$quizzId)->fetchAll();
+    $question = $bdd->query('SELECT question_id, question_title,question_input_type,question_quizz_id FROM question WHERE question.question_quizz_id = '.$ID_quizz)->fetchAll();
     $comp=0;/*compteur de question affichées*/
 
     foreach ($question as $key=>$line){
       $comp=$comp+1;
 
-      $questionExacte="q".$comp."f".$quizzId."";
+      $questionExacte="q".$comp."f".$ID_quizz."";
 
       // Printing forms
 
@@ -31,7 +30,7 @@
 
       if($line['question_input_type']=='checkbox'){
 
-        printTitle ($quizzId,$comp,$line,$questionExacte,$bdd);
+        quizzTitle ($ID_quizz,$comp,$line,$questionExacte,$bdd);
 
         $response = $bdd->query('SELECT answer_id,answer_text,is_valid_answer FROM answer WHERE answer.answer_question_id ='.$line['question_id'])->fetchAll();
         $compans=0;
@@ -50,7 +49,7 @@
 
       if($line['question_input_type']=='radio'){
 
-        printTitle ($quizzId,$comp,$line,$questionExacte,$bdd);
+        quizzTitle ($ID_quizz,$comp,$line,$questionExacte,$bdd);
 
 
         $response = $bdd->query('SELECT answer_id,answer_text,is_valid_answer FROM answer WHERE answer.answer_question_id ='.$line['question_id'])->fetchAll();
