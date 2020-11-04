@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `php`
 --
+CREATE DATABASE IF NOT EXISTS `quizz` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `quizz`;
 
 -- --------------------------------------------------------
 
@@ -99,14 +101,14 @@ CREATE TABLE IF NOT EXISTS `question` (
 --
 
 INSERT INTO `question` (`question_id`, `question_title`, `question_quizz_id`, `question_input_type`) VALUES
-(1, 'Quelle est la capitale du Canada ?', 1, ''),
-(2, 'Quel pays ne fait pas partie de l\'Amérique du Sud ?', 1, ''),
-(3, 'Quels pays sont dans l\'Union Européenne ?', 1, ''),
-(4, 'Combien y a-t\'il d\'étoiles sur le drapeau américain ? ', 1, ''),
-(5, 'Quel footballeur a le plus de Ballon d\'Or de l\'histoire ?', 2, ''),
-(6, 'Quelle équipe a le plus remporté de coupes du monde ?', 2, ''),
-(7, 'Qui est le dernier joueur à avoir remporté le Ballon d\'Or ? ', 2, ''),
-(8, 'Quels joueurs ont marqué plus de 60 buts en une saison ?', 2, '');
+(1, 'Quelle est la capitale du Canada ?', 1, 'radio'),
+(2, 'Quel pays ne fait pas partie de l\'Amérique du Sud ?', 1, 'radio'),
+(3, 'Quels pays sont dans l\'Union Européenne ?', 1, 'checkbox'),
+(4, 'Combien y a-t\'il d\'étoiles sur le drapeau américain ? ', 1, 'radio'),
+(5, 'Quel footballeur a le plus de Ballon d\'Or de l\'histoire ?', 2, 'radio'),
+(6, 'Quelle équipe a le plus remporté de coupes du monde ?', 2, 'radio'),
+(7, 'Qui est le dernier joueur à avoir remporté le Ballon d\'Or ? ', 2, 'radio'),
+(8, 'Quels joueurs ont marqué plus de 60 buts en une saison ?', 2, 'checkbox');
 
 -- --------------------------------------------------------
 

@@ -19,7 +19,7 @@
                     <label for="id">Identifiant</label> : <input type="text" name="id" placeholder="Entrer identifiant" id="id" required />
 
                     <label for="psw">Surname</label> : <input type="text" name="psw" placeholder="*******" id="psw" required />
-                    
+
                     <input type="submit" name="OK">
                 </p>
             </form>
@@ -30,6 +30,5 @@
   <?php include('footer.php')?>
 
   </body>
-
-
+  
 </html>

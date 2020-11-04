@@ -12,10 +12,10 @@
         <p class="textheader">Vous pouvez vous entrainez sur nos quizz sous format QCM</p>
         <a href="account.php" class="textheader" >Account</a>
       </div>
-    
+
     <div class="bouton">
-      <a href="quizz1.php" class="bouton1">QUIZZ 1</a>
-      <a href="quizz2.php" class="bouton2">QUIZZ 2</a>
+      <a href="quizz.php?id=1" class="bouton1">QUIZZ 1</a>
+      <a href="quizz.php?id=2" class="bouton2">QUIZZ 2</a>
     </div>
   </header>
   </body>

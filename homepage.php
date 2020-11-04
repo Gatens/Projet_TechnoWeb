@@ -8,24 +8,13 @@
   </head>
 
   <body>
-    <?php
-      $user = 'root';
-      $db = new PDO ('mysql:host=localhost;dbname=php', $user);
-     ?>
     <?php include('header.php') ?>
 
         <div id="imageQuizz">
 
-        <img class="imageQuizz" src="quizz.png">
+        <img class="imageQuizz" src="img/quizz.png">
         </div>
-
-
       <?php include('footer.php') ?>
-
-      
-
-
-
   </body>
 
 </html>
