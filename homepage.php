@@ -9,8 +9,7 @@
 
   <body>
     <?php
-      $user = 'root';
-      $db = new PDO ('mysql:host=localhost;dbname=php', $user);
+    include('connect.php')
      ?>
     <?php include('header.php') ?>
 
@@ -22,7 +21,7 @@
 
       <?php include('footer.php') ?>
 
-      
+
 
 
 
