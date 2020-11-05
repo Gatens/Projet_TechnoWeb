@@ -1,7 +1,4 @@
 <?php
-
-	include('database/connectToDB.php');
-
   function compare($question_id,$answerArray,$bdd){    // fonction qui compare les réponses avec la bdd
     $response = $bdd->query('SELECT answer_id,is_valid_answer FROM answer WHERE answer.answer_question_id ='.$question_id)->fetchAll();
     $question = $bdd->query('SELECT question_input_type FROM question WHERE question_id ='.$question_id)->fetchAll();

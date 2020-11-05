@@ -9,6 +9,8 @@
     
 <?php
 
+include('database/connectToDB.php');
+
 include('displayQuizz.php');
 include('displayAnswer.php');
 

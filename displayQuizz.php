@@ -1,7 +1,5 @@
 <?php
 
-	include('database/connectToDB.php');
-
 	function displayQuizz($ID_quizz,$bdd){  /*fonction qui affiche le quizz correspondant à son ID*/
 
     function quizzName ($ID_quizz,$compteur,$value,$goodQuestion,$bdd){
