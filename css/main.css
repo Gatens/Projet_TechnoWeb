@@ -37,7 +37,9 @@ header{
   margin-bottom: 10%;
   border:none;
 }
-
+body{
+  background-color: grey;
+}
 /*_________________________________GENERAL____________________________________*/
 
 .text {
@@ -49,7 +51,7 @@ header{
 
 img{
   text-align: center;
-  background: #273746;
+  background-color: grey;
 }
 /*_________________________________QUIZZ_______________________________________*/
 .question1{
@@ -195,7 +197,7 @@ footer{
   text-align: center;
   display: flex;
   height:5%;
-  background-color: grey;
+  background-color: #273746;
   flex-direction: column;
 
 }
