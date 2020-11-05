@@ -16,9 +16,6 @@
 
      <div class="formulaire">
 
-        <label for="id"><b>Identifiant</b></label>
-        <input type="text" placeholder="Entrer identifiant" name="id" id="id" class="blank" required>
-
         <label for="lastname"><b>Nom</b></label>
         <input type="text" placeholder="Entrer nom" name="lastname" id="lastname" class="blank" required>
 

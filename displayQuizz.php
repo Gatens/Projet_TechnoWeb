@@ -45,23 +45,6 @@
         echo("</div>");
       }
 
-      //Type checkbox//
-
-      if($value['question_input_type']=='checkbox'){
-
-        quizzName ($ID_quizz,$compteur,$value,$questionExacte,$bdd);
-
-        $response = $bdd->query('SELECT answer_id,answer_text,is_valid_answer FROM answer WHERE answer.answer_question_id ='.$value['question_id'])->fetchAll();
-        $compteurans=0;
-
-        foreach ($response as $key2 => $answer) {
-        	$compteurans=$compteurans+1;
-          echo("<div> <input class='checkboxElmnt' type='checkbox' id='rep".$compteurans."1q1' name='choix[]'' value=".$answer['answer_id']." '> <label for='rep1q1'>".$answer['answer_text']."</label></div>");
-        }
-
-        echo('</div>');
-        $compteurans=0;
-      }
 			//Type input//
 		  if($value['question_input_type']=='input'){
 
@@ -70,23 +53,41 @@
 		        echo('<input id="GET-name" class="input" type="number" name="name">');
 		        echo('</div>');
 		      }
-
-      //Type radio//
-
-
-      if($value['question_input_type']=='radio'){
-
-        quizzName ($ID_quizz,$compteur,$value,$questionExacte,$bdd);
+			//Type radio//
 
 
-        $response = $bdd->query('SELECT answer_id,answer_text,is_valid_answer FROM answer WHERE answer.answer_question_id ='.$value['question_id'])->fetchAll();
+					if($value['question_input_type']=='radio'){
 
-        foreach ($response as $key2 => $answer) {
-          echo('<input type="radio" class="radioElmnt" name="radio" value='.$answer['answer_id'].' class="radio"> <label for="radio">'.$answer['answer_text'].'</label> <br/>');
-        }
+						quizzName ($ID_quizz,$compteur,$value,$questionExacte,$bdd);
 
-        echo('</div>');
-      }
+
+						$response = $bdd->query('SELECT answer_id,answer_text,is_valid_answer FROM answer WHERE answer.answer_question_id ='.$value['question_id'])->fetchAll();
+
+						foreach ($response as $key2 => $answer) {
+							echo('<input type="radio" class="radioElmnt" name="radio" value='.$answer['answer_id'].' class="radio"> <label for="radio">'.$answer['answer_text'].'</label> <br/>');
+						}
+
+						echo('</div>');
+					}
+				//Type checkbox//
+
+					if($value['question_input_type']=='checkbox'){
+
+						quizzName ($ID_quizz,$compteur,$value,$questionExacte,$bdd);
+
+						$response = $bdd->query('SELECT answer_id,answer_text,is_valid_answer FROM answer WHERE answer.answer_question_id ='.$value['question_id'])->fetchAll();
+						$compteurans=0;
+
+						foreach ($response as $key2 => $answer) {
+							$compteurans=$compteurans+1;
+							echo("<div> <input class='checkboxElmnt' type='checkbox' id='rep".$compteurans."1q1' name='choix[]'' value=".$answer['answer_id']." '> <label for='rep1q1'>".$answer['answer_text']."</label></div>");
+						}
+
+						echo('</div>');
+						$compteurans=0;
+					}
+
+
     }
     echo('<div class="boutonSubmit"><a href=""> <input type="submit" value="Envoyer"class="buttonSubmit"></a></div>');
 
