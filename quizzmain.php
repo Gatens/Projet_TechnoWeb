@@ -13,7 +13,7 @@
           include('database/connectToDB.php');
           include('displayQuizz.php');
           displayQuizz($_GET['id'],$bdd);
-          ?>
+    ?>
     <?php include('footer.php'); ?>
   </div>
   </body>
