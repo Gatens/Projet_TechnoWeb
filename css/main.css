@@ -35,8 +35,9 @@ header{
   justify-content: center;
   margin-top: 10%;
   margin-bottom: 10%;
-
+  border:none;
 }
+
 /*_________________________________GENERAL____________________________________*/
 
 .text {
@@ -140,14 +141,15 @@ border-radius:0.2em;
 	height: auto;
 	display: flex;
 	justify-content: center;
+
 }
 
 .buttonSubmit{
   background-color: var(--colorSite);
   color: white;
   padding: 5%;
-  border-radius: 15%;
-  opacity: 0.7;
+  border-radius: 10%;
+  opacity: 0.8;
   font-weight: bolder;
 }
 /*_________________________________REGISTER________________________________________*/
