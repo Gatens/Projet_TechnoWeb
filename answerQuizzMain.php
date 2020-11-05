@@ -9,7 +9,7 @@
   <body>
   <div class='container'>
     <?php include('header.php'); ?>
-         <?php
+    <?php
           include('connectToDB.php');
           include('displayAnswer.php');
           displayAnswer($_GET['id'],$bdd);
