@@ -47,9 +47,8 @@
     </div>
 
       <div class="signin">
-        <p>Déjà un compte ? <a href="account.php" class="lien">Se connecter</a>.</p>
+        <p>Déjà un compte ? <a href="index.php?page=account" class="lien">Se connecter</a>.</p>
       </div>
     </form>
-    <?php include('footer.php')?>
   </body>
 </html>

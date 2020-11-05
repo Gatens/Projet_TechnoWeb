@@ -8,13 +8,9 @@
   </head>
   <body>
   <div class='container'>
-    <?php include('header.php'); ?>
     <?php
-          include('database/connectToDB.php');
-          include('displayQuizz.php');
           displayQuizz($_GET['id'],$bdd);
     ?>
-    <?php include('footer.php'); ?>
   </div>
   </body>
 </html>

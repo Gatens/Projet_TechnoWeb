@@ -7,7 +7,6 @@
   </head>
 
   <body>
- <?php include('header.php')?>
   	<div id="account">
 
             <h1>
@@ -25,9 +24,8 @@
             </form>
 
           <div class="register">
-              <a href="register.php" class="registerbutton">Register/S'enregistrer</a><br>
+              <a href="index.php?page=register" class="registerbutton">Register/S'enregistrer</a><br>
         </div>
-  <?php include('footer.php')?>
 
   </body>
 

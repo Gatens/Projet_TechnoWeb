@@ -111,7 +111,7 @@
                 echo('</div>');
               }
             }
-            echo('<div class="boutonSubmit"><a href="homepage.php"> <input type="submit" value="Accueil"class="buttonSubmit"></a></div>');
+            echo('<div class="boutonSubmit"><a href="index.php?page=home"> <input type="submit" value="Accueil"class="buttonSubmit"></a></div>');
             echo("</div>");
             echo("</div>");
 }

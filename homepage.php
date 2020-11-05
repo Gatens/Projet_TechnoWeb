@@ -8,13 +8,11 @@
   </head>
 
   <body>
-    <?php include('header.php') ?>
 
         <div id="imageQuizz">
 
         <img class="imageQuizz" src="img/quizz.png">
         </div>
-      <?php include('footer.php') ?>
   </body>
 
 </html>
