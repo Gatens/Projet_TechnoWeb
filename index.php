@@ -42,7 +42,8 @@ switch ($page) {
     break;
 
     }
-include('footer.php')
+include('footer.php');
+
 ?>
 
 </body>
