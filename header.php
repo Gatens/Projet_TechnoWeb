@@ -8,9 +8,9 @@
   <body>
     <header>
       <div id="textheader">
-        <p class="textheader"> Bonjour, bienvenue sur notre site !</p>
-        <p class="textheader">Vous pouvez vous entrainez sur nos quizz sous format QCM</p>
-        <a href="account.php" class="textheader" >Account</a>
+        <p class="textheader"> Bonjour et Bienvenue sur notre site !</p>
+        <p class="textheader">Vous pouvez vous entrainer sur nos quizz !</p>
+        <a href="account.php" class="textheader" >Login/Register</a>
       </div>
 
     <div class="bouton">

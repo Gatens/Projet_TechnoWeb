@@ -10,7 +10,7 @@
   <div class='container'>
     <?php include('header.php'); ?>
     <?php
-          include('connectToDB.php');
+          include('database/connectToDB.php');
           include('displayQuizz.php');
           displayQuizz($_GET['id'],$bdd);
           ?>

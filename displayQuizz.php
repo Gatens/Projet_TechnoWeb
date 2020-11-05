@@ -1,6 +1,6 @@
 <?php
 
-	include('connectToDB.php');
+	include('database/connectToDB.php');
 
 	function displayQuizz($ID_quizz,$bdd){  /*fonction qui affiche le quizz correspondant à son ID*/
 
@@ -26,7 +26,7 @@
 
       $questionExacte="q".$compteur."f".$ID_quizz."";
 
-      // Pour chaque Input Type
+      // Pour chaque Type
 
 			//Type selection//
 
