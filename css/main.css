@@ -55,7 +55,8 @@ img{
   color: black;
   background-color: #CACFD2  ;
   justify-content: center;
-  padding: 3%;
+  padding: 0.5%;
+  background-color: grey;
 }
 
 .question1:hover{
@@ -69,10 +70,7 @@ img{
 
 #content{
 font-family: Impact, "Arial Black", Arial, Verdana, sans-serif;
-height: 78vh;
-width : 100%;
-overflow: auto;
-border:50px;
+
 }
 
 #titrePage{
@@ -80,8 +78,8 @@ border:50px;
 	height: auto;
 	display: flex;
 	justify-content: center;
-	margin-bottom: 2rem;
-	margin-top: 1rem;
+	margin-bottom: 0.3%;
+	margin-top: 0.3%;
 }
 
 #questionContent{

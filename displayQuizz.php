@@ -6,14 +6,14 @@
 
     function quizzName ($ID_quizz,$compteur,$value,$goodQuestion,$bdd){
 
-      echo("<div id='question ".$compteur."_quizz".$ID_quizz."' class='questionQuizz ".$goodQuestion."'>");
+      echo("<div id='content ".$compteur."_quizz".$ID_quizz."' class='question1 ".$goodQuestion."'>");
       echo("<p class='question1'>Question ".$compteur." : ".$value['question_title']."</p>");
     }
 
 
     $quizz = $bdd->query('SELECT quizz_name FROM quizz;')->fetchAll();  // select le nom du quizz
 
-    echo('<div id="content"><div id="titrePage"><h1>Quizz '.$quizz[$ID_quizz-1]['quizz_name'].'</h1></div>');  // affiche le nom du quizz
+    echo('<div id="content"><div id="titrePage"><h2>Quizz '.$quizz[$ID_quizz-1]['quizz_name'].'</h2></div>');  // affiche le nom du quizz
     echo('<form action="answerQuizzMain.php?id='.$ID_quizz.'" method="post"><div id="questionContent">');
 
 		// selectionne les questions correspondant à l'ID du quizz
@@ -90,8 +90,7 @@
         echo('</div>');
       }
     }
-
-    echo('<div class="boutonSubmit"><a href=""> <input type="submit" value="Submit"class="buttonSubmit"></a></div>');
+    echo('<div class="boutonSubmit"><a href=""> <input type="submit" value="Envoyer"class="buttonSubmit"></a></div>');
 
     echo("</div>");
     echo('</form>');
