@@ -19,15 +19,15 @@
       }
     }
     if($comp==$compGoodAns){
-      return 'Bonne Reponse';
+      return '<br><br> Réponse Correcte';
     }else{
-      return 'Mauvaise Reponse';
+      return '<br><br> Mauvaise Réponse';
     }
   }
 
 	function displayAnswer($quizzId,$bdd){
-		/*titre et contenu*/
-            $quizz = $bdd->query('SELECT quizz_name FROM quizz;')->fetchAll();
+
+            $quizz = $bdd->query('SELECT quizz_name FROM quizz;')->fetchAll(); // affiche le nom du quizz
             echo('<div id="content"><div id="titrePage"><h2>Quizz '.$quizz[$quizzId-1]['quizz_name'].'</h2></div>');
 
             /*question quizz start*/
@@ -41,7 +41,7 @@
               if($line['question_input_type']=='selection'){
                 echo("<div id='question ".$comp."_quizz1' class='questionQuizz'>");
 
-                echo("<p class='titreQuestion'>Question".$comp." : ".$line['question_title']."".compare($line['question_id'],$_POST,$bdd)."</p>");
+                echo("<p class='titreQuestion'>Question ".$comp." : ".$line['question_title']."".compare($line['question_id'],$_POST,$bdd)."</p>");
 
                 echo(" <select  name='Question".$comp."Quizz".$line['question_quizz_id']."' form='selection'>");
 
@@ -66,7 +66,7 @@
 
               if($line['question_input_type']=='checkbox'){
                 echo("<div id='question ".$comp."_quizz1' class='questionQuizz'>");
-                echo("<p class='titreQuestion'>Question".$comp." : ".$line['question_title']."".compare($line['question_id'],$_POST,$bdd)."</p>");
+                echo("<p class='titreQuestion'>Question ".$comp." : ".$line['question_title']."".compare($line['question_id'],$_POST,$bdd)."</p>");
                 $response = $bdd->query('SELECT answer_id,answer_text,is_valid_answer FROM answer WHERE answer.answer_question_id ='.$line['question_id'])->fetchAll();
                 $compans=0;
 
@@ -89,7 +89,7 @@
                 $response = $bdd->query('SELECT answer_id,answer_text,is_valid_answer FROM answer WHERE answer.answer_question_id ='.$line['question_id'])->fetchAll();
 
                 echo("<div id='question ".$comp."_quizz1' class='questionQuizz'>");
-                echo("<p class='titreQuestion'>Question".$comp." : ".$line['question_title']."".compare($line['question_id'],$_POST,$bdd)."</p>");
+                echo("<p class='titreQuestion'>Question ".$comp." : ".$line['question_title']."".compare($line['question_id'],$_POST,$bdd)."</p>");
                 foreach ($response as $key2 => $answer) {
                     echo('<input id="GET-name" value="'.$answer['answer_text'].'" type="text" name="name">');
                 }
@@ -98,7 +98,7 @@
 
               if($line['question_input_type']=='radio'){
                 echo("<div id='question ".$comp."_quizz1' class='questionQuizz'>");
-                echo("<p class='titreQuestion'>Question".$comp." : ".$line['question_title']."".compare($line['question_id'],$_POST,$bdd)."</p>");
+                echo("<p class='titreQuestion'>Question ".$comp." : ".$line['question_title']."".compare($line['question_id'],$_POST,$bdd)."</p>");
                 $response = $bdd->query('SELECT answer_id,answer_text,is_valid_answer FROM answer WHERE answer.answer_question_id ='.$line['question_id'])->fetchAll();
 
                 foreach ($response as $key2 => $answer) {
@@ -112,7 +112,7 @@
             }
             /*question quizz end*/
             /*start submit button*/
-            echo('<div class="boutonSubmit"><a href="homepage.php"> <input type="submit" value="Home"class="buttonSubmit"></a></div>');
+            echo('<div class="boutonSubmit"><a href="homepage.php"> <input type="submit" value="Accueil"class="buttonSubmit"></a></div>');
             /*end submit button*/
             echo("</div>");/*end div questionContent*/
             echo("</div>");/*end div content*/

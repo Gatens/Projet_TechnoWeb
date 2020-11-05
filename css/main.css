@@ -2,6 +2,7 @@
   text-decoration: none;
   padding: 0;
   margin: 0;
+  font-family: Impact, "Arial Black", Arial, Verdana, sans-serif;
 }
 
 /*_________________________________HEADER_______________________________________*/
@@ -81,8 +82,7 @@ font-family: Impact, "Arial Black", Arial, Verdana, sans-serif;
 	height: auto;
 	display: flex;
 	justify-content: center;
-	margin-bottom: 0.3%;
-	margin-top: 0.3%;
+  background-color:#AEB6BF
 }
 
 #questionContent{
@@ -143,16 +143,19 @@ border-radius:0.2em;
 	height: auto;
 	display: flex;
 	justify-content: center;
+  background-color:#AEB6BF;
 
 }
 
 .buttonSubmit{
   background-color: var(--colorSite);
-  color: white;
+  color: black;
   padding: 5%;
   border-radius: 10%;
   opacity: 0.8;
   font-weight: bolder;
+  margin-top:5%;
+  margin-bottom:5%;
 }
 /*_________________________________REGISTER________________________________________*/
 .registerlink{
