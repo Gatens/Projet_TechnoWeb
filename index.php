@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fr" dir="ltr">
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/main.css">
@@ -9,9 +9,9 @@
 
 <?php
 include('database/connectToDB.php');
-include('displayQuizz.php');
-include('displayAnswer.php');
-include('header.php');
+include('fonctions/displayQuizz.php');
+include('fonctions/displayAnswer.php');
+include('pages/header.php');
 
 if(!isset($_GET['page'])){
     $page=' ';
@@ -22,27 +22,27 @@ else{
 
 switch ($page) {
     case "home":
-        include('homepage.php');
+        include('pages/homepage.php');
         break;
     case "quizz":
-        include('quizzmain.php');
+        include('fonctions/quizzmain.php');
         break;
     case "answerQuizzMain":
-        include('answerQuizzMain.php');
+        include('fonctions/answerQuizzMain.php');
         break;
     case "account":
-        include('account.php');
+        include('pages/account.php');
         break;
     case("register"):
-        include('register.php');
+        include('pages/register.php');
          break;
 
     default:
-        include('homepage.php');
+        include('pages/homepage.php');
     break;
 
     }
-include('footer.php');
+include('pages/footer.php');
 
 ?>
 
