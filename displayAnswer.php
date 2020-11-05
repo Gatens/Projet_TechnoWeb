@@ -38,12 +38,12 @@
               $comp=$comp+1;
 
 
-              if($line['question_input_type']=='carform'){
+              if($line['question_input_type']=='selection'){
                 echo("<div id='question ".$comp."_quizz1' class='questionQuizz'>");
 
                 echo("<p class='titreQuestion'>Question".$comp." : ".$line['question_title']."".compare($line['question_id'],$_POST,$bdd)."</p>");
 
-                echo(" <select  name='Question".$comp."Quizz".$line['question_quizz_id']."' form='carform'>");
+                echo(" <select  name='Question".$comp."Quizz".$line['question_quizz_id']."' form='selection'>");
 
 
 
@@ -112,7 +112,7 @@
             }
             /*question quizz end*/
             /*start submit button*/
-            echo('<div class="boutonSubmit"><a href="main.php"> <input type="submit" value="Home"class="buttonSubmit"></a></div>');
+            echo('<div class="boutonSubmit"><a href="homepage.php"> <input type="submit" value="Home"class="buttonSubmit"></a></div>');
             /*end submit button*/
             echo("</div>");/*end div questionContent*/
             echo("</div>");/*end div content*/
