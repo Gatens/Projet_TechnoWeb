@@ -1,5 +1,26 @@
 <?php
+		function compare($question_id,$answerArray,$bdd){    // fonction qui compare les réponses avec la bdd
+  		$response = $bdd->query('SELECT answer_id,is_valid_answer FROM answer WHERE answer.answer_question_id ='.$question_id)->fetchAll();
+  		$question = $bdd->query('SELECT question_input_type FROM question WHERE question_id ='.$question_id)->fetchAll();
+  		$compGoodAns=0;
+  		foreach ($response as $value1) {
+    		if ($value1['is_valid_answer']) {
+        		$compGoodAns=$compGoodAns+1; // ajoute au compteur de bonne réponse
+    		}
+  		}
 
+  		$comp=0;
+  		foreach($response as $value){   // ajoute au compteur de réponses
+    		if( in_array($value['answer_id'],$answerArray)&&($value['is_valid_answer'])){
+      		$comp=$comp+1;
+    		}
+  		}
+  		if($comp==$compGoodAns){   // affiche bonne ou mauvaise réponse en fonction de l'égalité des compteurs
+    		return ' Réponse Correcte';
+  		}else{
+    		return ' Mauvaise Réponse';
+  		}
+		}
 
 	function displayAnswer($quizzId,$bdd){ // affiche les réponses en html en fonction de leur type et en les comparant avec la database
 
@@ -95,26 +116,5 @@
             echo("</div>");
 }
 
-function compare($question_id,$answerArray,$bdd){    // fonction qui compare les réponses avec la bdd
-  $response = $bdd->query('SELECT answer_id,is_valid_answer FROM answer WHERE answer.answer_question_id ='.$question_id)->fetchAll();
-  $question = $bdd->query('SELECT question_input_type FROM question WHERE question_id ='.$question_id)->fetchAll();
-  $compGoodAns=0;
-  foreach ($response as $value1) {
-    if ($value1['is_valid_answer']) {
-        $compGoodAns=$compGoodAns+1; // ajoute au compteur de bonne réponse
-    }
-  }
 
-  $comp=0;
-  foreach($response as $value){   // ajoute au compteur de réponses
-    if( in_array($value['answer_id'],$answerArray)&&($value['is_valid_answer'])){
-      $comp=$comp+1;
-    }
-  }
-  if($comp==$compGoodAns){   // affiche bonne ou mauvaise réponse en fonction de l'égalité des compteurs
-    return ' Réponse Correcte';
-  }else{
-    return ' Mauvaise Réponse';
-  }
-}
  ?>
