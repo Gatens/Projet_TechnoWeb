@@ -12,7 +12,7 @@
     $quizz = $bdd->query('SELECT quizz_name FROM quizz;')->fetchAll();  // selectionne le nom du quizz
 
     echo('<div id="content"><div id="titrePage"><h2>Quizz '.$quizz[$ID_quizz-1]['quizz_name'].'</h2></div>');  // affiche le nom du quizz
-    echo('<form action="answerQuizzMain.php?id='.$ID_quizz.'" method="post"><div id="questionContent">');
+    echo('<form action=index.php?page=answerQuizzMain&id='.$ID_quizz.' method="post"><div id="questionContent">');
 
 		// selectionne les questions correspondant à l'ID du quizz
 

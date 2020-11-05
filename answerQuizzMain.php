@@ -8,7 +8,8 @@
   </head>
   <body>
   <div class='container'>
-    <?php displayAnswer($_GET['id'],$bdd);
+    <?php
+    displayAnswer($_GET['id'],$bdd);
           ?>
   </div>
   </body>

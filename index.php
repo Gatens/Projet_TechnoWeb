@@ -15,7 +15,6 @@ include('header.php');
 
 if(!isset($_GET['page'])){
     $page=' ';
-    include('homepage.php');
 }
 else{
     $page = $_GET['page'];
