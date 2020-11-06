@@ -133,14 +133,13 @@ INSERT INTO `quizz` (`quizz_id`, `quizz_name`) VALUES
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'user identifiant',
-  `user_last_name` varchar(255) NOT NULL COMMENT 'user last name',
-  `user_first_name` varchar(255) NOT NULL COMMENT 'user first name',
-  `user_adress` longtext NOT NULL COMMENT 'user physical adress',
-  `user_phone` varchar(255) DEFAULT NULL COMMENT 'user phone',
-  `user_birthdate` datetime DEFAULT NULL,
-  `user_password` varchar(255) NOT NULL COMMENT 'User Password',
-  PRIMARY KEY (`user_id`)
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `usermail` VARCHAR(50) NOT NULL,
+  `userpass` VARCHAR(50) NOT NULL,
+  `username` VARCHAR(50) NOT NULL,
+  `name` VARCHAR(50) NOT NULL,
+  `surname` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`id`);
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
