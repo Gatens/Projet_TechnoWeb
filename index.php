@@ -36,6 +36,11 @@ switch ($page) {
     case("register"):
         include('pages/register.php');
          break;
+    case("login"):
+        include('pages/login.php');
+        break;
+    case("createUser"):
+        include('pages/createUser.php');
 
     default:
         include('pages/homepage.php');
