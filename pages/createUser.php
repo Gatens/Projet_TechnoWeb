@@ -8,7 +8,7 @@ if (isset($_POST["Envoie"])){
   $username=$_POST['username'];
   $name=$_POST['name'];
   $surname=$_POST['surname'];
-
+  header('Location: index.php?page=account'); // redirige vers la poge account
 
   $userpass = password_hash($userpass,PASSWORD_DEFAULT);
 
