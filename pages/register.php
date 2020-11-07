@@ -8,7 +8,7 @@ if(isset($_POST['Register'])){?>
     <label for="name">name</label> : <input type="text" name="name" placeholder="your name" id="name" required />
     <label for="surname">surname</label> : <input type="text" name="surname" placeholder="your surname" id="surname" required />
 
-    <input type="submit" name="Envoie" href="index.php?page=account">
+    <button type="submit" name="Envoie" href="index.php?page=account">Envoie</button>
 
   </form>
   <?php
