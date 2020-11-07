@@ -19,7 +19,7 @@
 
                     <label for="psw">password</label> : <input type="password" name="pass" placeholder="*******" id="psw" required />
 
-                    <input type="submit" name="Envoyer">
+                    <button type="submit" name="Connexion">Connexion</button>
 
                 </p>
             </form>

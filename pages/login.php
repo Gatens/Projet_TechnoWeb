@@ -1,7 +1,7 @@
 <?php
 //var_dump($_POST);
 
-if (isset($_POST["Envoyer"])){
+if (isset($_POST["Connexion"])){
   $email =$_POST['email'];
   $pass=$_POST['pass'];
   //echo $email;
