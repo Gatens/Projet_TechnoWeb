@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 23 oct. 2020 à 16:19
+-- Généré le : sam. 07 nov. 2020 à 19:10
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -18,10 +18,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `php`
+-- Base de données : `database`
 --
-CREATE DATABASE IF NOT EXISTS `quizz` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `quizz`;
 
 -- --------------------------------------------------------
 
@@ -36,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `answer` (
   `is_valid_answer` tinyint(1) NOT NULL COMMENT 'valid answer for question',
   `answer_question_id` int(11) NOT NULL COMMENT 'question related',
   PRIMARY KEY (`answer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `answer`
@@ -58,21 +56,21 @@ INSERT INTO `answer` (`answer_id`, `answer_text`, `is_valid_answer`, `answer_que
 (13, 'Turquie', 0, 3),
 (14, 'Norvège', 0, 3),
 (15, 'Slovénie', 1, 3),
-(50, '50', 1, 4),
 (16, 'Michel Platini', 0, 5),
 (17, 'Cristiano Ronaldo', 0, 5),
 (18, 'Lionel Messi', 1, 5),
 (19, 'Johan Cruyff', 0, 5),
 (20, 'Cristiano Ronaldo', 0, 7),
-(21, 'Lionel Messi', 1, 7),
+(21, 'Lionel Messi', 0, 7),
 (22, 'Virgil Van Dijk', 0, 7),
-(23, 'Luka Modric', 0, 7),
+(23, 'Luka Modric', 1, 7),
 (24, 'Gerd Muller', 1, 8),
 (25, 'Zinedine Zidane', 0, 8),
 (26, 'Pele', 1, 8),
 (27, 'Diego Maradona', 0, 8),
 (28, 'Robert Lewandowski', 0, 8),
-(29, 'Harry Kane', 0, 8);
+(29, 'Harry Kane', 0, 8),
+(50, '50', 1, 4);
 
 -- --------------------------------------------------------
 
@@ -133,14 +131,33 @@ INSERT INTO `quizz` (`quizz_id`, `quizz_name`) VALUES
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
-  `id` int(100) NOT NULL AUTO_INCREMENT,
-  `usermail` VARCHAR(50) NOT NULL,
-  `userpass` VARCHAR(50) NOT NULL,
-  `username` VARCHAR(50) NOT NULL,
-  `name` VARCHAR(50) NOT NULL,
-  `surname` VARCHAR(50) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'user identifiant',
+  `usermail` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `surname` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`id`, `usermail`, `password`, `username`, `name`, `surname`) VALUES
+(5, 'gatien.soetens@isen.yncrea.fr', '$2y$10$O3EYGBrC8Lpb3f4Ou9nWg.eOm/JPGiAIVITSIuEuQ81ustdUZZCx.', 'Gatens', 'SOETENS', 'Gatien'),
+(6, 'thomas.brufau@isen.yncrea.fr', '$2y$10$63D3X2/DaL3xMeYjO4xi6eRP.h/W82gx3f8sjjqCMeWbjodnfLoHC', 'thomaslab', 'brufau', 'thomas'),
+(7, 'clement.champion@isen.yncrea.fr', '$2y$10$Y96PnU/2KFk4S2jIRB1wZ.2YXG56nFaxsd8ALoKYMNXopaXX5IVKm', 'champi', 'champion', 'clement'),
+(10, 'benjamin.grosbi', '$2y$10$W3BunHiOA5O/WCvvCUd/6.ZpaBfvVqtBr73nlsvbjmIoOxypLp2sy', '^vpjnZVH', 'UCTGVBVIYV', 'UGCVBIP'),
+(11, 'benjamin.grosbi', '$2y$10$3upLUNwr/dlfD2M69z1MLeq6tPf24ae.c.U8P9mJ1lGknDiX5vHrC', '^vpjnZVH', 'UCTGVBVIYV', 'UGCVBIP'),
+(12, 'azert', '$2y$10$e.dnoJ5hIXjbiw0mjTK8BOeY0TntX3HECtwqrMefQSitrcTToOmpi', 'rezty', 'rezty', 'zerty'),
+(13, 'bodelon193@onwmail.com', '$2y$10$Ult1YQteLxezJ4i1kE0TuOxsvajKAkflxhUqwFhHjL0GK.tb1plhK', 'bodelon', 'bodelon', 'bodelon'),
+(14, 'tombru59@gmail.com', '$2y$10$iITtYDXGURIRkwwMDeNmeODnoF3Nau1VHnNqmBd.jnhGJZuu1WrAy', 'salope', 'salope', 'salope'),
+(15, 'ert', '$2y$10$RdHaoqsT7KRaprpvoW1iYeb9PYb8YjZnAoblUv/noB4/LnXwczGXS', 'az', 'az', 'az'),
+(16, 'potter', '$2y$10$xIHmVZauKAglAOfH261sH.MMyH5MDgljshxTLvR/zgE17G0yA19vW', 'azer', 'zer', 'zear'),
+(17, 'aqw', '$2y$10$07SE38oMOmw7RW.2uXF04.mosZDMXSI7fvskauMtQgUxDbtDWXQzG', 'aqw', 'aqw', 'aqw'),
+(18, 'asez', '$2y$10$j0HkSJ/sGuSacFOyEA/oJuBlvnOWJPSQQFeKjrxzx1GN40izzZFBe', 'az', 'az', 'az'),
+(19, 'zaer', '$2y$10$9C0tO4T3CbgBbZ5K40oVpeHRgCi9cesPNjGFCzZddujY7CZAPRY2e', 'ezart', 'ezar', 'azer');
 
 -- --------------------------------------------------------
 
