@@ -32,6 +32,24 @@ header{
 
 /*_________________________________PHOTO QUIZZ________________________________________*/
 .imageQuizz{
+  height: 250px;
+  weight: 250px;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.imageQuizz1{
+  height: 300px;
+  weight: 300px;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.imageQuizz2{
+  height: 300px;
+  weight: 300px;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 #imageQuizz{
@@ -45,6 +63,8 @@ header{
 body{
   background-color: grey;
 }
+
+
 /*_________________________________GENERAL____________________________________*/
 
 .text {
@@ -169,6 +189,9 @@ border-radius:0.2em;
   font: Bold 24px Arial;
   justify-content: center;
   padding: 5%;
+}
+
+.boutonquizz{
 }
 /*_________________________________REGISTER________________________________________*/
 .registerlink{

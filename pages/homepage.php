@@ -9,10 +9,10 @@
 
   <body>
 
-        <div id="imageQuizz">
-
-        <img class="imageQuizz" src="img/quizz.png">
-        </div>
-  </body>
+    <div id="imageQuizz">
+      <img class="imageQuizz1" src="img/quizz1.png">
+      <img class="imageQuizz" src="img/quizz.png">
+      <img class="imageQuizz2" src="img/quizz2.png">
+    </div>
 
 </html>
