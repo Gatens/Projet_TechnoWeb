@@ -34,22 +34,22 @@ header{
 .imageQuizz{
   height: 250px;
   weight: 250px;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
 .imageQuizz1{
   height: 230px;
   weight: 230px;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
 .imageQuizz2{
   height: 300px;
   weight: 300px;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
 #imageQuizz{
