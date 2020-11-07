@@ -10,8 +10,14 @@
       <div id="textheader">
         <p class="textheader"> Bonjour et Bienvenue sur notre site !</p>
         <p class="textheader">Vous pouvez vous entrainer sur nos quizz !</p>
-        <a href="index.php?page=account" class="textheader" >Login/Register</a>
       </div>
+      <div id="boutonLogin">
+        <form method="post" action ="index.php?page=account">
+          <button class="buttonLogin" name="Login/register">Account</button>
+        </form>
+      </div>
+
+
 
     <div class="bouton">
       <?php

@@ -10,12 +10,12 @@ header{
   justify-content: center;
   background-color: #273746;
   color: white;
-  text-align: center;
 
 }
 #textheader{
   display:flex;
   flex-direction:column;
+  text-align: center;
 
 
 }
@@ -23,7 +23,11 @@ header{
   padding-bottom: 0.5%;
   color: white;
   text-decoration: none;
+}
 
+#boutonLogin{
+  display: flex;
+  padding-left: 90%;
 }
 
 /*_________________________________PHOTO QUIZZ________________________________________*/
@@ -157,6 +161,14 @@ border-radius:0.2em;
   font-weight: bolder;
   margin-top:5%;
   margin-bottom:5%;
+}
+
+.buttonLogin{
+  background-color: grey;
+  color: black;
+  font: Bold 24px Arial;
+  justify-content: center;
+  padding: 5%;
 }
 /*_________________________________REGISTER________________________________________*/
 .registerlink{

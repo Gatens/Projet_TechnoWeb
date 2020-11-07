@@ -23,7 +23,8 @@
 
                 </p>
             </form>
-
+          </br>
+          </br>
           <form method="post" action="index.php?page=register">
             <h1> S'enregistrer ? </h1>
             <button type="submit" name="Register">Register</button>
