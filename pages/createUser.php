@@ -1,6 +1,4 @@
 <?php
-//include('header.php');
-//var_dump($_POST);
 
 if (isset($_POST["Envoie"])){
   $usermail =$_POST['email'];
@@ -21,4 +19,5 @@ if (isset($_POST["Envoie"])){
   $create->execute();
 
 }
- ?>
+
+?>
