@@ -12,7 +12,7 @@ function displayQuizz($ID_quizz,$bdd)
 
     echo '<div id="content">';
         echo '<div id="titrePage">';
-            echo "<h2>Quizz" . $quizz[$ID_quizz-1]["quizz_name"] . "</h2>";
+            echo "<h2>Quizz : " . $quizz[$ID_quizz-1]["quizz_name"] . "</h2>";
         echo '</div>';
     echo "<form action=index.php?page=answer&id=" . $ID_quizz . " method='post'>";
         echo "<div id='questionContent'>";
