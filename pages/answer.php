@@ -1,5 +1,4 @@
 <?php
-
 /*_________________________________RADIO/SELECTION_______________________________________*/
 function radio_selection($rep_user, $answer) //Envoie 0 ou 1 si la réponse est bonne
 {

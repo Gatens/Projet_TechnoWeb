@@ -72,7 +72,7 @@ function displayQuizz($ID_quizz,$bdd)
                     foreach ($answer as $key2 => $proposition)
                     {
                         $answer_counter=$answer_counter+1;
-                        echo("<div> <input class='checkboxElmnt' type='checkbox' id='rep".$answer_counter."1q1' name='" . $questionExacte . "[]' value=".$proposition['answer_id']." '> <label for='rep1q1'>".$proposition['answer_text']."</label></div>");
+                        echo("<div> <input class='checkboxElmnt' type='checkbox' id='rep".$answer_counter."1q1' name='" . $questionExacte . "[]' value=".$proposition['answer_id']."'> <label for='rep1q1'>".$proposition['answer_text']."</label></div>");
                     }
                     echo('</div>');
                     $answer_counter=0;
