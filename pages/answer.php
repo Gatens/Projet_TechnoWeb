@@ -1,4 +1,17 @@
 <?php
+/*_________________________________RECUP ANSWER__________________________________________*/
+$date=date(DATE_RFC2822);
+$user_id=$bdd->query('SELECT user_id from user')->fetchall();
+function insertanswer($userid,$answeridr,$answerdate,$rep_user){
+  $stock=$bdd->prepare('INSERT INTO user_answer VALUES (NULL, :user_id, :answer_id, :user_answer_date, :user_answer_selection)');
+  $stock->bindParam(':user_id',$userid);
+  $stock->bindParam(':answer_id',$answer_id);
+  $stock->bindParam(':user_answer_date',$answerdate);
+  $stock->bindParam(':user_answer_selection',$rep_user);
+  $stock->execute();
+}
+
+
 /*_________________________________RADIO/SELECTION_______________________________________*/
 function radio_selection($rep_user, $answer) //Envoie 0 ou 1 si la réponse est bonne
 {
