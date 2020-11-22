@@ -92,7 +92,8 @@ if (in_array($id, $array))
     echo "</div>";
 }
 else{
-    echo '<h1>QUIZZ NOT FOUND</h1>';
+    echo "<h1> Vous n'êtes pas connecte !</h1>";
+
 }
 
 ?>

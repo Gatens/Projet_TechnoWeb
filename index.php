@@ -7,6 +7,7 @@
     </head>
     <body>
         <?php
+            session_start();
             include('database/connectToDB.php');
             include('pages/header.php');
 
@@ -15,20 +16,20 @@
             }
             else{
                 $page = $_GET['page'];
-            }      
-            
+            }
+
             if(!isset($_GET['id'])){
                 $id='0';
             }
             else{
                 $id = $_GET['id'];
-            } 
+            }
 
             switch ($page) {
-                case "home":
+                case ("home"):
                     include('pages/homepage.php');
                     break;
-                case "account":
+                case ("account"):
                     include('pages/account.php');
                     break;
                 case("register"):
@@ -40,7 +41,7 @@
                 case("createUser"):
                     include('pages/createUser.php');
                     break;
-                case('quizz'):
+                case('quizz' && isset(($_SESSION['connect']))): // si on ferme le navigateur on est automatiquement deconnecte
                     include('pages/quizz.php');
                     break;
                 case('answer'):

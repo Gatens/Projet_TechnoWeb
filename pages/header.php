@@ -7,8 +7,16 @@
   </div>
 
   <div id="boutonLogin">
-    <form method="post" action ="index.php?page=account">
-      <button class="buttonLogin" name="Login/register">Account</button>
+      <?php
+      if(isset($_SESSION['connect'])){
+      ?><form method="post" action="index.php?page=login">
+          <button type="submit" class="buttonLogin" name="LogOut">Log Out</button>
+        </form><?php
+    }
+      else{?>
+        <form method="post" action ="index.php?page=account">
+          <button class="buttonLogin" name="Login/register">Log In</button><?php
+      }?>
     </form>
   </div>
 

@@ -11,7 +11,9 @@ if (isset($_POST["Connexion"])){
       if ($value['usermail']==$userMail){ // on verifie que l'email appartient a la database
         $find=1;
         if (password_verify($userPass,$value['password'])){ // on verifie que le password corresponf a cet adresse mail
-          echo "<br> Vous êtes connectés </br>";
+          $_SESSION["connect"]="connecte";
+          header('Location: ./index.php');
+          exit();
         }
         else {
           echo "<br> Mauvais mot de passe </br>";
@@ -22,9 +24,13 @@ if (isset($_POST["Connexion"])){
       echo "<br> aucun utilisateur de ce nom </br>";
     }
   }
-
-  echo "<br> WSH </br>";
   checkUser($user,$email,$pass);
 }
 
+
+if (isset($_POST["LogOut"])){
+  $_SESSION=array();
+  header('Location: ./index.php');
+  exit();
+}
  ?>
