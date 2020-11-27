@@ -83,31 +83,47 @@ function compare($questionExacte, $question_id,$bdd)
     //var_dump($rep_user);
     $essai=1;
     $user_test=$_SESSION["user_id"];
-
+    $compteur_point=0;
     switch($question[0]['question_input_type'])
     {
         case ('checkbox'):
+            $bon = checkbox($rep_user, $answer);
+            if($bon==1){
+              $compteur_point+=1;
+            }
+            //var_dump($bon);
             foreach ($rep_user as $reponse) {
               //var_dump($reponse);
               insertanswer($user_test,$reponse,$essai,$bdd);
             }
-            $bon = checkbox($rep_user, $answer);
             break;
         case ('selection'):
-            insertanswer($user_test,$rep_user,$essai,$bdd);
             $bon = radio_selection($rep_user, $answer);
+            if($bon==1){
+              $compteur_point+=1;
+            }
+            insertanswer($user_test,$rep_user,$essai,$bdd);
             break;
         case ('radio'):
-            insertanswer($user_test,$rep_user,$essai,$bdd);
             $bon = radio_selection($rep_user, $answer);
+            if($bon==1){
+              $compteur_point+=1;
+            }
+            insertanswer($user_test,$rep_user,$essai,$bdd);
             break;
         case ('input'):
-            insertanswer($user_test,$rep_user,$essai,$bdd);
             $bon = input($rep_user, $answer);
+            if($bon==1){
+              $compteur_point+=1;
+            }
+            insertanswer($user_test,$rep_user,$essai,$bdd);
+
             break;
     }
+    echo ('Vous avez marqué '.$compteur_point.' point');
     return $bon ? ' Réponse Correcte' : ' Réponse incorrecte';
 }
+
 
 function displayAnswer($id_quizz,$bdd)// affiche les réponses en html en fonction de leur type et en les comparant avec la database
 {
