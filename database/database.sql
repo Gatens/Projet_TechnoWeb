@@ -167,15 +167,14 @@ INSERT INTO `user` (`id`, `usermail`, `password`, `username`, `name`, `surname`)
 
 DROP TABLE IF EXISTS `user_answer`;
 CREATE TABLE IF NOT EXISTS `user_answer` (
-  `user_answer_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'User answer identifiant',
-  `user_id` int(11) NOT NULL COMMENT 'user identifiant',
-  `answer_id` int(11) NOT NULL COMMENT 'answer_id',
-  `user_answer_date` timestamp NULL DEFAULT NULL COMMENT 'date of answer user',
-  `user_answer_selection` text(50)  NULL DEFAULT NULL COMMENT 'value when input are text or number',
+ `user_answer_id` int(11)NOT NULL AUTO_INCREMENT COMMENT 'User answer identifiant',
+ `user_id` int(11) NOT NULL COMMENT 'user identifiant',
+ `answer_id` int(11) NOT NULL COMMENT 'answer_id',
+ `user_answer` int(11) NULL DEFAULT NULL COMMENT 'answer_id of the user',
   PRIMARY KEY (`user_answer_id`),
   KEY `user_id_fk` (`user_id`),
   KEY `answer_id_fk` (`answer_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=ucs2;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contraintes pour les tables déchargées

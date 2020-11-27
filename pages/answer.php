@@ -1,17 +1,27 @@
 <?php
 /*_________________________________RECUP ANSWER__________________________________________*/
 /*$date=date(DATE_RFC2822);
-$user_id=$bdd->query('SELECT user_id from user')->fetchall();
-function insertanswer($userid,$answeridr,$answerdate,$rep_user){
-  $stock=$bdd->prepare('INSERT INTO user_answer VALUES (NULL, :user_id, :answer_id, :user_answer_date, :user_answer_selection)');
-  $stock->bindParam(':user_id',$userid);
-  $stock->bindParam(':answer_id',$answer_id);
-  $stock->bindParam(':user_answer_date',$answerdate);
-  $stock->bindParam(':user_answer_selection',$rep_user);
+$user_id=$bdd->query('SELECT user_id from user')->fetchall();*/
+function insertanswer($user_test,$reponse,$essai,$bdd){
+  $stock=$bdd->prepare('INSERT INTO user_answer VALUES (NULL,:usertest,:answer_id,:reponse)');
+  $stock->bindParam(':usertest',$user_test);
+  $stock->bindParam(':answer_id',$essai);
+  $stock->bindParam(':reponse',$reponse);
   $stock->execute();
 }
-*/
-// cette partie ne fonctionne pas 
+/*
+$essai=1;
+$user_test=$_SESSION["user_id"];
+if (!isset($_POST[$questionExacte])){
+  $rep_test = $_POST[$questionExacte];
+}
+$stock=$bdd->prepare('INSERT INTO user_answer(user_answer_id, user_id, answer_id, user_answer) VALUES (NULL,$usertest,$rep_test,$essai)');
+/*$stock->bindParam(':user_answer_id',$essai);
+$stock->bindParam(':user_id',$essai);
+$stock->bindParam(':answer_id',$essai);
+$stock->bindParam(':user_answer_date',$essai);
+$stock->execute();*/
+// cette partie ne fonctionne pas
 /*_________________________________RADIO/SELECTION_______________________________________*/
 function radio_selection($rep_user, $answer) //Envoie 0 ou 1 si la réponse est bonne
 {
@@ -70,20 +80,29 @@ function compare($questionExacte, $question_id,$bdd)
     else{
         $rep_user = $_POST[$questionExacte];
     }
-
+    //var_dump($rep_user);
+    $essai=1;
+    $user_test=$_SESSION["user_id"];
 
     switch($question[0]['question_input_type'])
     {
         case ('checkbox'):
+            foreach ($rep_user as $reponse) {
+              //var_dump($reponse);
+              insertanswer($user_test,$reponse,$essai,$bdd);
+            }
             $bon = checkbox($rep_user, $answer);
             break;
         case ('selection'):
+            insertanswer($user_test,$rep_user,$essai,$bdd);
             $bon = radio_selection($rep_user, $answer);
             break;
         case ('radio'):
+            insertanswer($user_test,$rep_user,$essai,$bdd);
             $bon = radio_selection($rep_user, $answer);
             break;
         case ('input'):
+            insertanswer($user_test,$rep_user,$essai,$bdd);
             $bon = input($rep_user, $answer);
             break;
     }

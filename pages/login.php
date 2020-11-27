@@ -3,7 +3,7 @@
 if (isset($_POST["Connexion"])){
   $email =$_POST['email'];
   $pass=$_POST['pass'];
-  $user = $bdd->query('SELECT usermail,password FROM user;')->fetchAll(); // recuperation du mail et du password dans la bdd
+  $user = $bdd->query('SELECT id,usermail,password FROM user;')->fetchAll(); // recuperation du mail et du password dans la bdd
 
   function checkUser($db, $userMail, $userPass){
     $find=0;
@@ -12,6 +12,8 @@ if (isset($_POST["Connexion"])){
         $find=1;
         if (password_verify($userPass,$value['password'])){ // on verifie que le password corresponf a cet adresse mail
           $_SESSION["connect"]="connecte";
+          $id = $value['id'];
+          $_SESSION["user_id"]=$id;
           header('Location: ./index.php');
           exit();
         }
