@@ -67,6 +67,7 @@ function compare($questionExacte, $question_id,$bdd)
         $rep_user = $_POST[$questionExacte];
     }
     //var_dump($rep_user);
+    
     $essai=$question_id;
     $user_test=$_SESSION["user_id"];
     $compteur_point=0;
@@ -103,11 +104,16 @@ function compare($questionExacte, $question_id,$bdd)
               $compteur_point+=1;
             }
             insertanswer($user_test,$rep_user,$essai,$bdd);
-
             break;
     }
-    echo ('Vous avez marqué '.$compteur_point.' point');
-    return $bon ? ' Réponse Correcte' : ' Réponse incorrecte';
+
+    //echo ('Vous avez marqué '.$compteur_point.' point');
+    if($bon==1){
+        return array(' Réponse Correcte',1);
+    }
+    else{
+        return array(' Mauvaise Réponse',0);
+    }
 }
 
 
@@ -122,6 +128,7 @@ function displayAnswer($id_quizz,$bdd)// affiche les réponses en html en foncti
     $question_number=0; // numéro de la question
     // on fait une requete pour la reponse dans la bdd
     $answer = $bdd->query('SELECT answer_id,answer_text,is_valid_answer, answer_question_id FROM answer;')->fetchAll();
+    $scoreTotal=0;
 
     foreach ($question as $key=>$type)
     {
@@ -133,11 +140,16 @@ function displayAnswer($id_quizz,$bdd)// affiche les réponses en html en foncti
         {
             echo("<div id='question1".$question_number."_quizz1' class='question1'>");
             // affiche le numéro de la question
-            echo("<p class='question1'>Question ".$question_number." : ".$type['question_title']."".compare($questionExacte, $type['question_id'],$bdd)."</p>");
+            echo("<p class='question1'>Question ".$question_number." : ".$type['question_title']."".compare($questionExacte, $type['question_id'],$bdd)[0]."</p>");
             // affiche  la question
             echo(" <select  name='Question".$question_number."Quizz".$type['question_quizz_id']."' form='selection'>");
             // on fait une requete pour la reponse dans la bdd
             $answer = $bdd->query('SELECT answer_id,answer_text,is_valid_answer FROM answer WHERE answer.answer_question_id ='.$type['question_id'])->fetchAll();
+            
+            if(compare($questionExacte, $type['question_id'],$bdd)[1] == 1){
+                $scoreTotal+=1;
+            }
+
             foreach ($answer as $key2 => $proposition) // vérifie que la réponse est correcte
             {
                     if ($proposition['is_valid_answer'] == 1)
@@ -153,11 +165,16 @@ function displayAnswer($id_quizz,$bdd)// affiche les réponses en html en foncti
         if($type['question_input_type']=='checkbox')
         {
             echo("<div id='question1".$question_number."_quizz1' class='question1'>");
-            echo("<p class='question1'>Question ".$question_number." : ".$type['question_title']."".compare($questionExacte, $type['question_id'],$bdd)."</p>");
+            echo("<p class='question1'>Question ".$question_number." : ".$type['question_title']."".compare($questionExacte, $type['question_id'],$bdd)[0]."</p>");
 
             $answer = $bdd->query('SELECT answer_id,answer_text,is_valid_answer FROM answer WHERE answer.answer_question_id ='.$type['question_id'])->fetchAll();
             // on fait une requete pour la reponse dans la bdd
             $answer_counter=0;
+
+            if(compare($questionExacte, $type['question_id'],$bdd)[1] == 1){
+                $scoreTotal+=1;
+            }
+
             foreach ($answer as $key2 => $proposition)
             {
                 $answer_counter=$answer_counter+1;
@@ -177,7 +194,12 @@ function displayAnswer($id_quizz,$bdd)// affiche les réponses en html en foncti
             $answer = $bdd->query('SELECT answer_id,answer_text,is_valid_answer FROM answer WHERE answer.answer_question_id ='.$type['question_id'])->fetchAll();
             // on fait une requete pour la reponse dans la bdd
             echo("<div id='question1".$question_number."_quizz1' class='question1'>");
-            echo("<p class='question1'>Question ".$question_number." : ".$type['question_title']."".compare($questionExacte, $type['question_id'],$bdd)."</p>");
+            echo("<p class='question1'>Question ".$question_number." : ".$type['question_title']."".compare($questionExacte, $type['question_id'],$bdd)[0]."</p>");
+            
+            if(compare($questionExacte, $type['question_id'],$bdd)[1] == 1){
+                $scoreTotal+=1;
+            }
+
             foreach ($answer as $key2 => $proposition)
             {
                 echo('<input id="GET-name" value="'.$proposition['answer_text'].'" type="text" name="name">');
@@ -190,10 +212,16 @@ function displayAnswer($id_quizz,$bdd)// affiche les réponses en html en foncti
         if($type['question_input_type']=='radio')
         {
             echo("<div id='question1".$question_number."_quizz1' class='question1'>");
-            echo("<p class='question1'>Question ".$question_number." : ".$type['question_title']."".compare($questionExacte, $type['question_id'],$bdd)."</p>");
+            echo("<p class='question1'>Question ".$question_number." : ".$type['question_title']."".compare($questionExacte, $type['question_id'],$bdd)[0]."</p>");
+
 
             $response = $bdd->query('SELECT answer_id,answer_text,is_valid_answer FROM answer WHERE answer.answer_question_id ='.$type['question_id'])->fetchAll();
             // on fait une requete pour la reponse dans la bdd
+        
+            if(compare($questionExacte, $type['question_id'],$bdd)[1] == 1){
+                $scoreTotal+=1;
+            }
+
             foreach ($response as $key2 => $proposition)
             {
                 if ($proposition['is_valid_answer'] == 1)
@@ -208,18 +236,34 @@ function displayAnswer($id_quizz,$bdd)// affiche les réponses en html en foncti
     echo('<div class="boutonSubmit"><a href="index.php?page=home"> <input type="submit" value="Accueil"class="buttonSubmit"></a></div>');
     echo("</div>");
     echo("</div>");
+
+    return $scoreTotal;
+}
+
+function insertScore($bdd,$scoreTotal){
+    $user_id=$_SESSION["user_id"];
+
+    $stock=$bdd->prepare('INSERT INTO score VALUES (:userconnect, :score)');
+    $stock->bindParam(':userconnect',$user_id);
+    $stock->bindParam(':score',$scoreTotal);
+    $stock->execute();
+
 }
 
 $array = array("1","2");
 if (in_array($id, $array))
  {
     echo "<div class='container'>";
-    displayAnswer($id,$bdd);
+    $scoreTotal = displayAnswer($id,$bdd);
+    echo("Votre score total est de : $scoreTotal");
+    insertScore($bdd,$scoreTotal);
     echo "</div>";
 }
 else
 {
     echo '<h1>QUIZZ NOT FOUND</h1>';
 }
+
+
 
 ?>
