@@ -67,7 +67,7 @@ function compare($questionExacte, $question_id,$bdd)
         $rep_user = $_POST[$questionExacte];
     }
     //var_dump($rep_user);
-    
+
     $essai=$question_id;
     $user_test=$_SESSION["user_id"];
     $compteur_point=0;
@@ -145,7 +145,7 @@ function displayAnswer($id_quizz,$bdd)// affiche les réponses en html en foncti
             echo(" <select  name='Question".$question_number."Quizz".$type['question_quizz_id']."' form='selection'>");
             // on fait une requete pour la reponse dans la bdd
             $answer = $bdd->query('SELECT answer_id,answer_text,is_valid_answer FROM answer WHERE answer.answer_question_id ='.$type['question_id'])->fetchAll();
-            
+
             if(compare($questionExacte, $type['question_id'],$bdd)[1] == 1){
                 $scoreTotal+=1;
             }
@@ -195,7 +195,7 @@ function displayAnswer($id_quizz,$bdd)// affiche les réponses en html en foncti
             // on fait une requete pour la reponse dans la bdd
             echo("<div id='question1".$question_number."_quizz1' class='question1'>");
             echo("<p class='question1'>Question ".$question_number." : ".$type['question_title']."".compare($questionExacte, $type['question_id'],$bdd)[0]."</p>");
-            
+
             if(compare($questionExacte, $type['question_id'],$bdd)[1] == 1){
                 $scoreTotal+=1;
             }
@@ -217,7 +217,7 @@ function displayAnswer($id_quizz,$bdd)// affiche les réponses en html en foncti
 
             $response = $bdd->query('SELECT answer_id,answer_text,is_valid_answer FROM answer WHERE answer.answer_question_id ='.$type['question_id'])->fetchAll();
             // on fait une requete pour la reponse dans la bdd
-        
+
             if(compare($questionExacte, $type['question_id'],$bdd)[1] == 1){
                 $scoreTotal+=1;
             }
@@ -240,12 +240,13 @@ function displayAnswer($id_quizz,$bdd)// affiche les réponses en html en foncti
     return $scoreTotal;
 }
 
-function insertScore($bdd,$scoreTotal){
+function insertScore($bdd,$scoreTotal,$id_quizz_score){
     $user_id=$_SESSION["user_id"];
 
-    $stock=$bdd->prepare('INSERT INTO score VALUES (:userconnect, :score)');
+    $stock=$bdd->prepare('INSERT INTO score VALUES (NULL, :userconnect, :score, :id_quizz_score)');
     $stock->bindParam(':userconnect',$user_id);
     $stock->bindParam(':score',$scoreTotal);
+    $stock->bindParam(':id_quizz_score',$id_quizz_score);
     $stock->execute();
 
 }
@@ -256,7 +257,7 @@ if (in_array($id, $array))
     echo "<div class='container'>";
     $scoreTotal = displayAnswer($id,$bdd);
     echo("Votre score total est de : $scoreTotal");
-    insertScore($bdd,$scoreTotal);
+    insertScore($bdd,$scoreTotal,$id);
     echo "</div>";
 }
 else

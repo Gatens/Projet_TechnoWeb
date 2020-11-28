@@ -1,34 +1,43 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.3
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Nov 28, 2020 at 09:57 PM
--- Server version: 5.7.26
--- PHP Version: 7.4.2
+-- Hôte : 127.0.0.1:3306
+-- Généré le : sam. 28 nov. 2020 à 23:27
+-- Version du serveur :  5.7.31
+-- Version de PHP : 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
 --
--- Database: `database`
+-- Base de données : `database`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `answer`
+-- Structure de la table `answer`
 --
 
-CREATE TABLE `answer` (
-  `answer_id` int(11) NOT NULL COMMENT 'answer identifier',
+DROP TABLE IF EXISTS `answer`;
+CREATE TABLE IF NOT EXISTS `answer` (
+  `answer_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'answer identifier',
   `answer_text` varchar(255) NOT NULL COMMENT 'text of the answer',
   `is_valid_answer` tinyint(1) NOT NULL COMMENT 'valid answer for question',
-  `answer_question_id` int(11) NOT NULL COMMENT 'question related'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `answer_question_id` int(11) NOT NULL COMMENT 'question related',
+  PRIMARY KEY (`answer_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `answer`
+-- Déchargement des données de la table `answer`
 --
 
 INSERT INTO `answer` (`answer_id`, `answer_text`, `is_valid_answer`, `answer_question_id`) VALUES
@@ -66,18 +75,21 @@ INSERT INTO `answer` (`answer_id`, `answer_text`, `is_valid_answer`, `answer_que
 -- --------------------------------------------------------
 
 --
--- Table structure for table `question`
+-- Structure de la table `question`
 --
 
-CREATE TABLE `question` (
-  `question_id` int(11) NOT NULL COMMENT 'question_identification',
+DROP TABLE IF EXISTS `question`;
+CREATE TABLE IF NOT EXISTS `question` (
+  `question_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'question_identification',
   `question_title` varchar(255) NOT NULL COMMENT 'title of the question',
   `question_quizz_id` int(11) NOT NULL COMMENT 'link question quizz',
-  `question_input_type` varchar(255) NOT NULL COMMENT 'input of the question'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `question_input_type` varchar(255) NOT NULL COMMENT 'input of the question',
+  PRIMARY KEY (`question_id`),
+  KEY `question_quizz_id_fk` (`question_quizz_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `question`
+-- Déchargement des données de la table `question`
 --
 
 INSERT INTO `question` (`question_id`, `question_title`, `question_quizz_id`, `question_input_type`) VALUES
@@ -93,16 +105,18 @@ INSERT INTO `question` (`question_id`, `question_title`, `question_quizz_id`, `q
 -- --------------------------------------------------------
 
 --
--- Table structure for table `quizz`
+-- Structure de la table `quizz`
 --
 
-CREATE TABLE `quizz` (
-  `quizz_id` int(11) NOT NULL COMMENT 'Quizz Identifiant',
-  `quizz_name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `quizz`;
+CREATE TABLE IF NOT EXISTS `quizz` (
+  `quizz_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Quizz Identifiant',
+  `quizz_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`quizz_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `quizz`
+-- Déchargement des données de la table `quizz`
 --
 
 INSERT INTO `quizz` (`quizz_id`, `quizz_name`) VALUES
@@ -112,39 +126,44 @@ INSERT INTO `quizz` (`quizz_id`, `quizz_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `score`
+-- Structure de la table `score`
 --
 
-CREATE TABLE `score` (
+DROP TABLE IF EXISTS `score`;
+CREATE TABLE IF NOT EXISTS `score` (
+  `score_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
-  `score` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `score` int(11) NOT NULL,
+  `quizz_id` int(11) NOT NULL,
+  PRIMARY KEY (`score_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `score`
+-- Déchargement des données de la table `score`
 --
 
-INSERT INTO `score` (`user_id`, `score`) VALUES
-(20, 2),
-(20, 3);
+INSERT INTO `score` (`score_id`, `user_id`, `score`, `quizz_id`) VALUES
+(3, 21, 0, 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Structure de la table `user`
 --
 
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL COMMENT 'user identifiant',
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'user identifiant',
   `usermail` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `username` varchar(50) NOT NULL,
   `name` varchar(50) DEFAULT NULL,
-  `surname` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `surname` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `user`
+-- Déchargement des données de la table `user`
 --
 
 INSERT INTO `user` (`id`, `usermail`, `password`, `username`, `name`, `surname`) VALUES
@@ -161,23 +180,29 @@ INSERT INTO `user` (`id`, `usermail`, `password`, `username`, `name`, `surname`)
 (17, 'aqw', '$2y$10$07SE38oMOmw7RW.2uXF04.mosZDMXSI7fvskauMtQgUxDbtDWXQzG', 'aqw', 'aqw', 'aqw'),
 (18, 'asez', '$2y$10$j0HkSJ/sGuSacFOyEA/oJuBlvnOWJPSQQFeKjrxzx1GN40izzZFBe', 'az', 'az', 'az'),
 (19, 'zaer', '$2y$10$9C0tO4T3CbgBbZ5K40oVpeHRgCi9cesPNjGFCzZddujY7CZAPRY2e', 'ezart', 'ezar', 'azer'),
-(20, 'benjamin.grosbety@isen.yncrea.fr', '$2y$10$190bLjGA6gsyYdznVGn38.nKBCxeLKalmXe08m31m0l7LZovu5n0C', 'benji', 'ben', 'ben');
+(20, 'benjamin.grosbety@isen.yncrea.fr', '$2y$10$190bLjGA6gsyYdznVGn38.nKBCxeLKalmXe08m31m0l7LZovu5n0C', 'benji', 'ben', 'ben'),
+(21, 't@t', '$2y$10$XHl.WXKedmuXuhOt4zZYk.nyClQq6R7y65.CNmEb8q2PdEX/qWbe6', 'zae', 'zea', 'zea'),
+(23, 'n@n', '$2y$10$VOT3g1A9yYpCV4YBr2ZqH.8SX0qaI91xAgDlIIBPHe5cP/ldq9aze', 'n', 'n', 'n');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_answer`
+-- Structure de la table `user_answer`
 --
 
-CREATE TABLE `user_answer` (
-  `user_answer_id` int(11) NOT NULL COMMENT 'User answer identifiant',
+DROP TABLE IF EXISTS `user_answer`;
+CREATE TABLE IF NOT EXISTS `user_answer` (
+  `user_answer_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'User answer identifiant',
   `user_id` int(11) NOT NULL COMMENT 'user identifiant',
   `question_id` int(11) NOT NULL COMMENT 'question_id',
-  `user_answer` int(11) DEFAULT NULL COMMENT 'answer_id of the user'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `user_answer` int(11) DEFAULT NULL COMMENT 'answer_id of the user',
+  PRIMARY KEY (`user_answer_id`),
+  KEY `user_id_fk` (`user_id`),
+  KEY `question_id_fk` (`question_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=414 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `user_answer`
+-- Déchargement des données de la table `user_answer`
 --
 
 INSERT INTO `user_answer` (`user_answer_id`, `user_id`, `question_id`, `user_answer`) VALUES
@@ -395,92 +420,224 @@ INSERT INTO `user_answer` (`user_answer_id`, `user_id`, `question_id`, `user_ans
 (212, 20, 2, 7),
 (213, 20, 2, 7),
 (214, 20, 4, 50),
-(215, 20, 4, 50);
+(215, 20, 4, 50),
+(216, 20, 1, 3),
+(217, 20, 1, 3),
+(218, 20, 2, 7),
+(219, 20, 2, 7),
+(220, 20, 3, 11),
+(221, 20, 3, 12),
+(222, 20, 3, 15),
+(223, 20, 3, 11),
+(224, 20, 3, 12),
+(225, 20, 3, 15),
+(226, 20, 4, 50),
+(227, 20, 4, 50),
+(228, 21, 1, 3),
+(229, 21, 1, 3),
+(230, 21, 2, 7),
+(231, 21, 2, 7),
+(232, 21, 3, 11),
+(233, 21, 3, 12),
+(234, 21, 3, 15),
+(235, 21, 3, 11),
+(236, 21, 3, 12),
+(237, 21, 3, 15),
+(238, 21, 4, 50),
+(239, 21, 4, 50),
+(240, 21, 1, 3),
+(241, 21, 1, 3),
+(242, 21, 2, 7),
+(243, 21, 2, 7),
+(244, 21, 3, 11),
+(245, 21, 3, 12),
+(246, 21, 3, 15),
+(247, 21, 3, 11),
+(248, 21, 3, 12),
+(249, 21, 3, 15),
+(250, 21, 4, 50),
+(251, 21, 4, 50),
+(252, 21, 5, 18),
+(253, 21, 5, 18),
+(254, 21, 6, 5),
+(255, 21, 6, 5),
+(256, 21, 7, 21),
+(257, 21, 7, 21),
+(258, 21, 8, 24),
+(259, 21, 8, 26),
+(260, 21, 8, 24),
+(261, 21, 8, 26),
+(262, 21, 5, 17),
+(263, 21, 5, 17),
+(264, 21, 7, 21),
+(265, 21, 7, 21),
+(266, 21, 8, 25),
+(267, 21, 8, 26),
+(268, 21, 8, 25),
+(269, 21, 8, 26),
+(270, 21, 5, 18),
+(271, 21, 5, 18),
+(272, 21, 6, 3),
+(273, 21, 6, 3),
+(274, 21, 7, 21),
+(275, 21, 7, 21),
+(276, 21, 8, 25),
+(277, 21, 8, 26),
+(278, 21, 8, 25),
+(279, 21, 8, 26),
+(280, 21, 5, 18),
+(281, 21, 5, 18),
+(282, 21, 6, 3),
+(283, 21, 6, 3),
+(284, 21, 7, 21),
+(285, 21, 7, 21),
+(286, 21, 8, 25),
+(287, 21, 8, 26),
+(288, 21, 8, 25),
+(289, 21, 8, 26),
+(290, 21, 5, 18),
+(291, 21, 5, 18),
+(292, 21, 6, 4),
+(293, 21, 6, 4),
+(294, 21, 7, 21),
+(295, 21, 7, 21),
+(296, 21, 8, 24),
+(297, 21, 8, 26),
+(298, 21, 8, 24),
+(299, 21, 8, 26),
+(300, 21, 5, 16),
+(301, 21, 5, 16),
+(302, 21, 7, 21),
+(303, 21, 7, 21),
+(304, 21, 8, 25),
+(305, 21, 8, 27),
+(306, 21, 8, 25),
+(307, 21, 8, 27),
+(308, 21, 5, 16),
+(309, 21, 5, 16),
+(310, 21, 2, 8),
+(311, 21, 2, 8),
+(312, 21, 3, 13),
+(313, 21, 3, 14),
+(314, 21, 3, 13),
+(315, 21, 3, 14),
+(316, 21, 4, 4),
+(317, 21, 4, 4),
+(318, 21, 5, 16),
+(319, 21, 5, 16),
+(320, 21, 7, 21),
+(321, 21, 7, 21),
+(322, 21, 8, 24),
+(323, 21, 8, 26),
+(324, 21, 8, 24),
+(325, 21, 8, 26),
+(326, 21, 5, 16),
+(327, 21, 5, 16),
+(328, 21, 7, 21),
+(329, 21, 7, 21),
+(330, 21, 8, 25),
+(331, 21, 8, 26),
+(332, 21, 8, 27),
+(333, 21, 8, 25),
+(334, 21, 8, 26),
+(335, 21, 8, 27),
+(336, 21, 5, 16),
+(337, 21, 5, 16),
+(338, 21, 5, 16),
+(339, 21, 5, 16),
+(340, 21, 5, 16),
+(341, 21, 5, 16),
+(342, 21, 5, 16),
+(343, 21, 5, 16),
+(344, 21, 8, 26),
+(345, 21, 8, 29),
+(346, 21, 8, 26),
+(347, 21, 8, 29),
+(348, 21, 5, 16),
+(349, 21, 5, 16),
+(350, 21, 6, 3),
+(351, 21, 6, 3),
+(352, 21, 7, 21),
+(353, 21, 7, 21),
+(354, 21, 8, 26),
+(355, 21, 8, 26),
+(356, 21, 2, 6),
+(357, 21, 2, 6),
+(358, 21, 2, 6),
+(359, 21, 2, 6),
+(360, 21, 5, 16),
+(361, 21, 5, 16),
+(362, 21, 2, 6),
+(363, 21, 2, 6),
+(364, 21, 5, 16),
+(365, 21, 5, 16),
+(366, 21, 1, 3),
+(367, 21, 1, 3),
+(368, 21, 2, 7),
+(369, 21, 2, 7),
+(370, 21, 3, 11),
+(371, 21, 3, 12),
+(372, 21, 3, 15),
+(373, 21, 3, 11),
+(374, 21, 3, 12),
+(375, 21, 3, 15),
+(376, 21, 4, 50),
+(377, 21, 4, 50),
+(378, 21, 5, 16),
+(379, 21, 5, 16),
+(380, 21, 5, 18),
+(381, 21, 5, 18),
+(382, 21, 6, 5),
+(383, 21, 6, 5),
+(384, 21, 7, 21),
+(385, 21, 7, 21),
+(386, 21, 8, 24),
+(387, 21, 8, 26),
+(388, 21, 8, 24),
+(389, 21, 8, 26),
+(390, 21, 1, 2),
+(391, 21, 1, 2),
+(392, 21, 2, 9),
+(393, 21, 2, 9),
+(394, 21, 3, 11),
+(395, 21, 3, 13),
+(396, 21, 3, 14),
+(397, 21, 3, 11),
+(398, 21, 3, 13),
+(399, 21, 3, 14),
+(400, 21, 4, 14),
+(401, 21, 4, 14),
+(402, 21, 5, 16),
+(403, 21, 5, 16),
+(404, 21, 5, 16),
+(405, 21, 5, 16),
+(406, 21, 1, 3),
+(407, 21, 1, 3),
+(408, 21, 2, 6),
+(409, 21, 2, 6),
+(410, 21, 3, 12),
+(411, 21, 3, 12),
+(412, 21, 5, 16),
+(413, 21, 5, 16);
 
 --
--- Indexes for dumped tables
+-- Contraintes pour les tables déchargées
 --
 
 --
--- Indexes for table `answer`
---
-ALTER TABLE `answer`
-  ADD PRIMARY KEY (`answer_id`);
-
---
--- Indexes for table `question`
---
-ALTER TABLE `question`
-  ADD PRIMARY KEY (`question_id`),
-  ADD KEY `question_quizz_id_fk` (`question_quizz_id`);
-
---
--- Indexes for table `quizz`
---
-ALTER TABLE `quizz`
-  ADD PRIMARY KEY (`quizz_id`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `user_answer`
---
-ALTER TABLE `user_answer`
-  ADD PRIMARY KEY (`user_answer_id`),
-  ADD KEY `user_id_fk` (`user_id`),
-  ADD KEY `question_id_fk` (`question_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `answer`
---
-ALTER TABLE `answer`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'answer identifier', AUTO_INCREMENT=51;
-
---
--- AUTO_INCREMENT for table `question`
---
-ALTER TABLE `question`
-  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'question_identification', AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `quizz`
---
-ALTER TABLE `quizz`
-  MODIFY `quizz_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Quizz Identifiant', AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'user identifiant', AUTO_INCREMENT=21;
-
---
--- AUTO_INCREMENT for table `user_answer`
---
-ALTER TABLE `user_answer`
-  MODIFY `user_answer_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'User answer identifiant', AUTO_INCREMENT=216;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `question`
+-- Contraintes pour la table `question`
 --
 ALTER TABLE `question`
   ADD CONSTRAINT `question_quizz_id_fk` FOREIGN KEY (`question_quizz_id`) REFERENCES `quizz` (`quizz_id`);
 
 --
--- Constraints for table `user_answer`
+-- Contraintes pour la table `user_answer`
 --
 ALTER TABLE `user_answer`
   ADD CONSTRAINT `question_id_fk` FOREIGN KEY (`question_id`) REFERENCES `question` (`question_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
