@@ -67,7 +67,7 @@ function compare($questionExacte, $question_id,$bdd)
         $rep_user = $_POST[$questionExacte];
     }
     //var_dump($rep_user);
-    $essai=$answer['answer_id'];
+    $essai=$question_id;
     $user_test=$_SESSION["user_id"];
     $compteur_point=0;
     switch($question[0]['question_input_type'])
