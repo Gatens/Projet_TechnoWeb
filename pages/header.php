@@ -8,7 +8,7 @@
 <div class="regroupe">
 
   <div class="classement">
-    <a href="">Classement</a>
+    <a href="index.php?page=classement">Classement</a>
   </div>
 
   <div class="quizz">

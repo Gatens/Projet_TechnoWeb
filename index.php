@@ -52,6 +52,17 @@
                       </script>';
                     }
                     break;
+                case('classement'):
+                    if (isset($_SESSION['connect'])){// si on ferme le navigateur on est automatiquement deconnecte
+                      include('pages/classement.php');
+                    }
+                    else {
+                    $message='Vous devez etre connecté pour acceder au classement !';
+                    echo '<script>alert("'.$message.'");
+                    window.location.href="index.php?page=account";
+                    </script>';
+                  }
+
                 case('answer'):
                     include('pages/answer.php');
                     break;
