@@ -1,7 +1,7 @@
 <div class="formulaire">
   <p class="espace1"> Page de connexion. </p>
   <form class="connexion" method="post" action="index.php?page=login">
-      <label for="id">Adresse mail :</label> <input type="text" name="email" placeholder="Entrez votre adresse mail" id="id" required />
+      <label for="id">Adresse mail :</label> <input type="email" name="email" placeholder="Entrez votre adresse mail" id="id" required />
       <label for="psw">Mot de passe :</label> <input type="password" name="pass" placeholder="*****" id="psw" required />
       <button class="autre" type="submit" name="Connexion">Connexion</button>
   </form>

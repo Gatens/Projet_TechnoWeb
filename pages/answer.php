@@ -1,7 +1,5 @@
 <?php
 /*_________________________________RECUP ANSWER__________________________________________*/
-/*$date=date(DATE_RFC2822);
-$user_id=$bdd->query('SELECT user_id from user')->fetchall();*/
 function insertanswer($user_test,$reponse,$essai,$bdd){
   $stock=$bdd->prepare('INSERT INTO user_answer VALUES (NULL,:usertest,:answer_id,:reponse)');
   $stock->bindParam(':usertest',$user_test);
@@ -9,19 +7,7 @@ function insertanswer($user_test,$reponse,$essai,$bdd){
   $stock->bindParam(':reponse',$reponse);
   $stock->execute();
 }
-/*
-$essai=1;
-$user_test=$_SESSION["user_id"];
-if (!isset($_POST[$questionExacte])){
-  $rep_test = $_POST[$questionExacte];
-}
-$stock=$bdd->prepare('INSERT INTO user_answer(user_answer_id, user_id, answer_id, user_answer) VALUES (NULL,$usertest,$rep_test,$essai)');
-/*$stock->bindParam(':user_answer_id',$essai);
-$stock->bindParam(':user_id',$essai);
-$stock->bindParam(':answer_id',$essai);
-$stock->bindParam(':user_answer_date',$essai);
-$stock->execute();*/
-// cette partie ne fonctionne pas
+
 /*_________________________________RADIO/SELECTION_______________________________________*/
 function radio_selection($rep_user, $answer) //Envoie 0 ou 1 si la réponse est bonne
 {
@@ -81,7 +67,7 @@ function compare($questionExacte, $question_id,$bdd)
         $rep_user = $_POST[$questionExacte];
     }
     //var_dump($rep_user);
-    $essai=1;
+    $essai=$answer['answer_id'];
     $user_test=$_SESSION["user_id"];
     $compteur_point=0;
     switch($question[0]['question_input_type'])
