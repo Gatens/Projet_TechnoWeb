@@ -23,17 +23,16 @@ header{
   padding-bottom: 0.5%;
   color: white;
   text-decoration: none;
+  margin-bottom: 1%;
+  font-size: 120%
 }
 
 #boutonLogin{
   display: flex;
-  padding-left: 90%;
 }
-
 .classement a{
   color: white;
 }
-
 /*___________________DEROULANT__________________________________________________*/
 .regroupe{
   display: flex;
@@ -78,7 +77,6 @@ header{
 body{
   background-color: grey;
 }
-
 /*_______________________REGISTER_______________________________________*/
 .formulaire input{
   background-color: white;
@@ -200,14 +198,21 @@ border-radius:0.2em;
                 /*________________bouton__________________________*/
 .bouton{
   text-align: center;
+  display: none;
+
 }
 
 .bouton1{
-  font:Bold 100px Arial;
+  font:Bold 150% Arial;
   background:#d34836;
   color: white;
   border-radius:10px;
-  margin-right:0.5%;
+  margin: 0.5%;
+  margin-bottom: 10%;
+  margin-top: 10%;
+  width: 100%;
+  padding: 3%;
+
 }
 
 .bouton1:hover {
@@ -255,11 +260,14 @@ border-radius:0.2em;
 }
 
 .buttonLogin{
-  background-color: grey;
-  color: black;
-  font: Bold 20px Arial;
+  background-color: #273746;
+  border: none;
+  color: white;
   justify-content: center;
   padding: 5%;
+  font-size: 100%;
+  width: 120%;
+
 }
 
 .boutonquizz{
