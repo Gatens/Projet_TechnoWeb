@@ -169,11 +169,11 @@ DROP TABLE IF EXISTS `user_answer`;
 CREATE TABLE IF NOT EXISTS `user_answer` (
  `user_answer_id` int(11)NOT NULL AUTO_INCREMENT COMMENT 'User answer identifiant',
  `user_id` int(11) NOT NULL COMMENT 'user identifiant',
- `answer_id` int(11) NOT NULL COMMENT 'answer_id',
+ `question_id` int(11) NOT NULL COMMENT 'question_id',
  `user_answer` int(11) NULL DEFAULT NULL COMMENT 'answer_id of the user',
   PRIMARY KEY (`user_answer_id`),
   KEY `user_id_fk` (`user_id`),
-  KEY `answer_id_fk` (`answer_id`)
+  KEY `question_id_fk` (`question_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -190,7 +190,7 @@ ALTER TABLE `question`
 -- Contraintes pour la table `user_answer`
 --
 ALTER TABLE `user_answer`
-  ADD CONSTRAINT `answer_id_fk` FOREIGN KEY (`answer_id`) REFERENCES `answer` (`answer_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `question_id_fk` FOREIGN KEY (`question_id`) REFERENCES `question` (`question_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
