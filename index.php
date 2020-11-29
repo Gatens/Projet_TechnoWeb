@@ -81,6 +81,11 @@
                 case('answer'):
                     include('pages/answer.php');
                     break;
+
+            
+                case('resultatsUser'):
+                    include('pages/resultatsUser.php');
+                    break;
                 default:
                     include('pages/homepage.php');
                     break;

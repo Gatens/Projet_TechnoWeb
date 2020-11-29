@@ -8,7 +8,7 @@
       <form action="index.php?page=quizz&id=<?php echo($_GET['id']);?>" method="post">
         <input class="boutonchoix" type="submit" name="fairequizz" value="Faire le Quizz" />
       </form>
-      <form action="index.php?page=answer&id=<?php echo($_GET['id']);?>" method="post">
+      <form action="index.php?page=resultatsUser&id=<?php echo($_GET['id']);?>" method="post">
         <input class="boutonchoix" type="submit" name="resultats" value="Afficher mes résultats" />
 
       </form>
