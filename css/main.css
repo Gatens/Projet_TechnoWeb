@@ -134,6 +134,26 @@ body{
 .espace2{
   margin-bottom: 1%
 }
+/*_________________________________CHOIX______________________________________*/
+.choix{
+  text-align: center;
+}
+
+.boutonchoix{
+  font:Bold 100% Arial;
+  background:#d34836;
+  color: white;
+  border-radius:10px;
+  margin-bottom: 1%;
+  margin-top: 3%;
+  width: 20%;
+  padding: 1%;
+  text-align: center;
+}
+
+#titre{
+  font-size: 170%;
+}
 /*_________________________________GENERAL____________________________________*/
 
 .text {
@@ -212,7 +232,6 @@ border-radius:0.2em;
   margin-top: 10%;
   width: 100%;
   padding: 3%;
-
 }
 
 .bouton1:hover {

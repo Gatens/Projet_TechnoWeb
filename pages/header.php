@@ -20,7 +20,7 @@
         $quizz = $bdd->query('SELECT quizz_id FROM quizz')->fetchAll();
         foreach ($quizz as $key => $quizz_Id)
         {
-          echo('<a class="bouton1" href="index.php?page=quizz&id='.$quizz_Id['quizz_id'].'">Quizz '.$quizz_Id['quizz_id'].'</a>');
+          echo('<a class="bouton1" href="index.php?page=choix&id='.$quizz_Id['quizz_id'].'">Quizz '.$quizz_Id['quizz_id'].'</a>');
         }
         ?>
     </div>

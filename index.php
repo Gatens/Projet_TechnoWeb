@@ -41,11 +41,26 @@
                 case("createUser"):
                     include('pages/createUser.php');
                     break;
+                case("choix"):
+                    if (isset($_SESSION['connect']))// si on ferme le navigateur on est automatiquement deconnecte
+                    {
+                      include('pages/choix.php');
+                    }
+                    else
+                    {
+                      $message='Vous devez etre connecté pour acceder aux quizz !';
+                      echo '<script>alert("'.$message.'");
+                      window.location.href="index.php?page=account";
+                      </script>';
+                    }
+                break;
                 case('quizz'):
-                    if (isset($_SESSION['connect'])){// si on ferme le navigateur on est automatiquement deconnecte
+                    if (isset($_SESSION['connect']))// si on ferme le navigateur on est automatiquement deconnecte
+                    {
                       include('pages/quizz.php');
                     }
-                    else {
+                    else
+                    {
                       $message='Vous devez etre connecté pour acceder aux quizz !';
                       echo '<script>alert("'.$message.'");
                       window.location.href="index.php?page=account";
