@@ -10,16 +10,18 @@
       </form>
       <form action="index.php?page=resultatsUser&id=<?php echo($_GET['id']);?>" method="post">
         <input class="boutonchoix" type="submit" name="resultats" value="Afficher mes résultats" />
-
       </form>
-        <form action="index.php?page=choix&id=<?php echo($_GET['id']);?>" method="post">
-      <input class="boutonchoix" type="submit" name="resultats" value="Supprimer mes résultats" />
-    <!--
-     if{il clique sur le bouton supprimer mes resultats}
-      {
-        DELETE score_id,score WHERE quizz_id=le numero du quizzz AND user_id= l'id du gars;
-        echo('Vos résultats ont été supprimé')
-      }
--->
+      <form action="index.php?page=choix&id=<?php echo($_GET['id']);?>" method="post">
+        <input class="boutonchoix" type="submit" name="suppresion" value="Supprimer mes résultats" />
+      </form>
 
     </div>
+<?php
+      if(isset($_POST['suppresion'])){
+        $supp=$bdd->query('DELETE FROM score WHERE score.user_id='.$_SESSION['user_id'].' AND  score.quizz_id='.$_GET['id'])->fetchAll();
+        $message='Vos résultats ont bien été supprimés !';
+        echo '<script type="text/javascript">window.alert("'.$message.'");
+        window.location.href="index.php?page=home;"
+        </script>';
+      }
+?>
