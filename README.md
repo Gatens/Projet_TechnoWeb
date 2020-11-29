@@ -1,9 +1,5 @@
 # Projet_TechnoWeb
 Bonjour, 
+Veuillez trouver ici le lien de notre rapport : 
 
-Pour information :
-
-La partie "user_management" a été réalisée en groupe avec un seul PC (Gatens) en visio. 
-Tous les push ont donc été réalisé via son compte mais chaque membre de l'équipe a travaillé sur cette étape même ils n'ont pas push.
-
-Merci de votre compréhension
+La branche final_step regroupe les rectifications de user_management qui est à présent fonctionelle, ainsi que la tentative de mise en place d'un classement pour la partie extra-features. 
