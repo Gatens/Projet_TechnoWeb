@@ -260,11 +260,11 @@ if (in_array($id, $array))
     insertScore($bdd,$scoreTotal,$id);
     echo "</div>";
 }
-else
+/*else
 {
     echo '<h1>QUIZZ NOT FOUND</h1>';
 }
-
+*/
 
 
 ?>
